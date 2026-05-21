@@ -3,30 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fire Point — Every Chart Has An Ignition Point</title>
-  <meta name="description" content="Fire Point is a community meme around the Ukrainian defense-tech legend: Denis Shtilerman, battlefield engineering energy, and the impossible 2M → 6B path." />
-  <meta property="og:title" content="Fire Point — Every Chart Has An Ignition Point" />
-  <meta property="og:description" content="Ukrainian defense-tech lore. Denis Shtilerman energy. 2M → 6B myth arc. No affiliation. Pure meme." />
+  <title>Firepoint — Ukrainian Defense-Tech Meme</title>
+  <meta name="description" content="Firepoint is a positive community meme inspired by Ukrainian defense-tech, precision engineering, fast builders, rocket energy and the 2M → 6B ignition arc." />
+  <meta property="og:title" content="Firepoint — Ukrainian Defense-Tech Meme" />
+  <meta property="og:description" content="Ukrainian engineering energy. Precision tech. Positive fire. 2M spark → 6B ignition. No affiliation. Pure community meme." />
   <meta name="theme-color" content="#050507" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050507;
-      --bg-2: #090a0d;
-      --surface: rgba(255,255,255,.045);
-      --surface-2: rgba(255,255,255,.075);
-      --line: rgba(255,255,255,.11);
-      --line-soft: rgba(255,255,255,.06);
-      --text: #f6f4ee;
-      --muted: #a8a8a8;
-      --dim: #686b72;
-      --fire: #ff3b1f;
-      --fire-2: #ff8a00;
-      --target: #e2ff56;
-      --green: #3dff9f;
-      --blue: #6f8cff;
+      --bg: #030305;
+      --ink: #f7f3e8;
+      --muted: rgba(247,243,232,.68);
+      --dim: rgba(247,243,232,.46);
+      --line: rgba(247,243,232,.14);
+      --glass: rgba(255,255,255,.055);
+      --glass-2: rgba(255,255,255,.095);
+      --fire: #ff3b18;
+      --amber: #ffb000;
+      --gold: #f9ff74;
+      --sky: #69d7ff;
+      --ua-blue: #2167ff;
+      --ua-yellow: #ffd83d;
+      --green: #52ffae;
       --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --max: 1180px;
@@ -36,14 +36,15 @@
     html { scroll-behavior: smooth; background: var(--bg); }
     body {
       margin: 0;
+      color: var(--ink);
       font-family: var(--sans);
-      color: var(--text);
-      background:
-        radial-gradient(circle at 18% 8%, rgba(255,59,31,.26), transparent 28rem),
-        radial-gradient(circle at 80% 20%, rgba(255,138,0,.16), transparent 28rem),
-        radial-gradient(circle at 50% 95%, rgba(226,255,86,.08), transparent 34rem),
-        linear-gradient(180deg, #050507 0%, #08090d 38%, #030304 100%);
       overflow-x: hidden;
+      background:
+        radial-gradient(circle at 50% -12%, rgba(255,176,0,.28), transparent 32rem),
+        radial-gradient(circle at 6% 14%, rgba(33,103,255,.25), transparent 28rem),
+        radial-gradient(circle at 92% 22%, rgba(255,59,24,.22), transparent 28rem),
+        radial-gradient(circle at 50% 92%, rgba(82,255,174,.10), transparent 34rem),
+        linear-gradient(180deg, #050507 0%, #07080c 42%, #030305 100%);
       font-feature-settings: "cv01", "ss03";
     }
 
@@ -51,15 +52,15 @@
       content: "";
       position: fixed;
       inset: 0;
+      z-index: 50;
       pointer-events: none;
-      z-index: 30;
       opacity: .13;
       mix-blend-mode: screen;
       background-image:
-        linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: radial-gradient(circle at 50% 20%, black, transparent 78%);
+        linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(circle at 50% 20%, black 0%, transparent 72%);
     }
 
     body::after {
@@ -67,9 +68,9 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: 31;
-      opacity: .05;
-      background: repeating-linear-gradient(0deg, transparent 0 2px, rgba(255,255,255,.45) 3px, transparent 4px);
+      z-index: 60;
+      opacity: .045;
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,.5) 0 1px, transparent 1px 4px);
     }
 
     a { color: inherit; text-decoration: none; }
@@ -77,746 +78,802 @@
 
     .nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
+      inset: 0 0 auto 0;
+      z-index: 40;
       display: flex;
       justify-content: center;
-      padding: 16px;
+      padding: 18px;
       pointer-events: none;
     }
+
     .nav-inner {
-      width: min(var(--max), calc(100vw - 24px));
-      height: 56px;
+      width: min(var(--max), calc(100vw - 28px));
+      pointer-events: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 14px 0 18px;
-      border: 1px solid var(--line-soft);
-      background: rgba(5,5,7,.64);
-      backdrop-filter: blur(18px) saturate(120%);
+      gap: 18px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,.12);
       border-radius: 999px;
-      box-shadow: 0 14px 60px rgba(0,0,0,.36), inset 0 1px rgba(255,255,255,.08);
-      pointer-events: all;
+      background: rgba(3,3,5,.54);
+      backdrop-filter: blur(22px) saturate(150%);
+      box-shadow: 0 18px 70px rgba(0,0,0,.34);
     }
+
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 11px;
-      letter-spacing: .12em;
-      font-size: 13px;
-      font-weight: 800;
+      gap: 10px;
+      padding-left: 8px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
       text-transform: uppercase;
     }
+
     .mark {
       width: 30px;
       height: 30px;
       border-radius: 50%;
       position: relative;
-      background: radial-gradient(circle, var(--target) 0 8%, transparent 9% 31%, var(--fire) 32% 37%, transparent 38%),
-                  conic-gradient(from 0deg, transparent 0 18%, rgba(255,59,31,.9) 19% 23%, transparent 24% 49%, rgba(255,138,0,.9) 50% 54%, transparent 55% 78%, rgba(226,255,86,.8) 79% 83%, transparent 84%);
-      box-shadow: 0 0 22px rgba(255,59,31,.55), inset 0 0 0 1px rgba(255,255,255,.22);
+      background:
+        conic-gradient(from 220deg, var(--ua-blue), var(--sky), var(--ua-yellow), var(--fire), var(--ua-blue));
+      box-shadow: 0 0 30px rgba(255,176,0,.32), inset 0 0 0 1px rgba(255,255,255,.32);
+      animation: spin 12s linear infinite;
     }
-    .mark::before, .mark::after {
+    .mark::after {
       content: "";
       position: absolute;
-      background: rgba(246,244,238,.72);
+      inset: 8px;
+      border-radius: 50%;
+      background: #050507;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.16);
     }
-    .mark::before { width: 42px; height: 1px; left: -6px; top: 14px; }
-    .mark::after { width: 1px; height: 42px; left: 14px; top: -6px; }
-    .nav-links { display: flex; align-items: center; gap: 22px; color: #c5c5c5; font-size: 12px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
-    .nav-links a { opacity: .78; transition: .2s ease; }
-    .nav-links a:hover { opacity: 1; color: var(--target); }
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      min-height: 38px;
-      padding: 0 16px;
+
+    .links { display: flex; align-items: center; gap: 4px; }
+    .links a {
+      padding: 10px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: linear-gradient(135deg, rgba(255,59,31,.92), rgba(255,138,0,.86));
-      box-shadow: 0 0 34px rgba(255,59,31,.26);
-      color: #120705;
-      font-weight: 900;
-      opacity: 1 !important;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: .2s ease;
     }
+    .links a:hover { color: var(--ink); background: rgba(255,255,255,.08); }
+    .ticker-link {
+      border: 1px solid rgba(255,255,255,.15);
+      background: linear-gradient(135deg, rgba(255,216,61,.18), rgba(255,59,24,.14));
+      color: var(--ink) !important;
+    }
+
+    main { position: relative; z-index: 1; }
 
     .hero {
       min-height: 100svh;
-      position: relative;
       display: grid;
-      place-items: center;
-      padding: 120px 20px 64px;
+      align-items: center;
+      padding: 130px 22px 72px;
+      position: relative;
       overflow: hidden;
-      isolation: isolate;
     }
-    .orbital {
-      position: absolute;
-      width: min(78vw, 780px);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.08);
-      background:
-        radial-gradient(circle, transparent 0 13%, rgba(255,255,255,.06) 13.2% 13.55%, transparent 13.8% 28%, rgba(255,59,31,.2) 28.2% 28.55%, transparent 28.9% 47%, rgba(226,255,86,.08) 47.2% 47.5%, transparent 48%),
-        conic-gradient(from 40deg, transparent 0 31%, rgba(255,59,31,.8) 31.2% 31.6%, transparent 31.8% 64%, rgba(255,138,0,.5) 64.2% 64.5%, transparent 64.9%);
-      filter: drop-shadow(0 0 60px rgba(255,59,31,.18));
-      opacity: .68;
-      animation: rotate 28s linear infinite;
-      z-index: -3;
-    }
-    .orbital::before, .orbital::after {
+
+    .hero::before {
       content: "";
       position: absolute;
-      inset: 12%;
-      border: 1px dashed rgba(255,255,255,.08);
+      inset: -18% -16% auto auto;
+      width: min(62vw, 720px);
+      aspect-ratio: 1;
       border-radius: 50%;
-    }
-    .orbital::after { inset: 33%; border-color: rgba(226,255,86,.18); animation: rotate 16s linear reverse infinite; }
-
-    .crosshair {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      opacity: .45;
       background:
-        linear-gradient(90deg, transparent calc(50% - .5px), rgba(255,255,255,.16) 50%, transparent calc(50% + .5px)),
-        linear-gradient(0deg, transparent calc(50% - .5px), rgba(255,255,255,.13) 50%, transparent calc(50% + .5px));
-      mask-image: radial-gradient(circle at center, black 0 42%, transparent 68%);
+        radial-gradient(circle at 38% 42%, rgba(255,255,255,.22), transparent 4%),
+        radial-gradient(circle at 50% 50%, rgba(255,176,0,.32), transparent 18%),
+        radial-gradient(circle at 50% 50%, rgba(255,59,24,.20), transparent 36%),
+        radial-gradient(circle at 50% 50%, rgba(33,103,255,.16), transparent 58%),
+        transparent;
+      filter: blur(.2px);
+      opacity: .9;
+      animation: float 9s ease-in-out infinite;
     }
 
-    .hero-card {
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -6vw;
+      top: 16vh;
+      width: min(56vw, 720px);
+      height: 2px;
+      transform: rotate(-28deg);
+      transform-origin: right center;
+      background: linear-gradient(90deg, transparent, rgba(255,216,61,.22), rgba(255,255,255,.78), rgba(255,59,24,.9));
+      box-shadow: 0 0 28px rgba(255,176,0,.58), 0 0 80px rgba(255,59,24,.36);
+      animation: beam 4.6s ease-in-out infinite;
+    }
+
+    .hero-grid {
       width: min(var(--max), 100%);
-      text-align: center;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 52px;
+      align-items: center;
       position: relative;
     }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      margin-bottom: 22px;
+      gap: 10px;
       padding: 8px 12px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(255,255,255,.14);
       border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      color: #d8d8d8;
+      color: var(--muted);
+      background: rgba(255,255,255,.045);
+      backdrop-filter: blur(12px);
       font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .12em;
+      font-size: 11px;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
-    .ping {
+    .pulse {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--target);
-      box-shadow: 0 0 0 6px rgba(226,255,86,.1), 0 0 26px rgba(226,255,86,.8);
-      animation: pulse 1.4s ease-in-out infinite;
+      background: var(--green);
+      box-shadow: 0 0 20px var(--green);
+      animation: blink 1.4s ease-in-out infinite;
     }
+
     h1 {
-      margin: 0 auto;
-      max-width: 1050px;
-      font-size: clamp(58px, 11vw, 158px);
-      line-height: .82;
-      letter-spacing: -.075em;
-      font-weight: 900;
+      margin: 22px 0 0;
+      font-size: clamp(72px, 13.2vw, 176px);
+      line-height: .78;
+      letter-spacing: -.085em;
       text-transform: uppercase;
+      font-weight: 900;
+      max-width: 940px;
     }
-    .h-fire {
-      display: inline-block;
-      color: transparent;
-      background: linear-gradient(90deg, #fff7ea 0%, #ffb21d 30%, #ff351d 56%, #fff7ea 100%);
+
+    .gradient-text {
+      display: block;
+      padding-right: .08em;
+      background: linear-gradient(100deg, var(--ink) 0%, #fff9bf 30%, var(--ua-yellow) 47%, var(--fire) 72%, #fff 100%);
       -webkit-background-clip: text;
       background-clip: text;
-      text-shadow: 0 0 70px rgba(255,59,31,.32);
+      color: transparent;
+      filter: drop-shadow(0 0 35px rgba(255,176,0,.18));
     }
-    .h-point {
-      display: inline-block;
-      color: #f6f4ee;
-      text-shadow: 0 0 70px rgba(255,255,255,.12);
+
+    .subhead {
+      margin: 26px 0 0;
+      max-width: 690px;
+      color: var(--muted);
+      font-size: clamp(18px, 2.1vw, 25px);
+      line-height: 1.38;
+      letter-spacing: -.025em;
     }
-    .tagline {
-      margin: 24px auto 0;
-      max-width: 760px;
-      color: #c8c7c3;
-      font-size: clamp(18px, 2.2vw, 26px);
-      line-height: 1.25;
-      font-weight: 500;
-      letter-spacing: -.03em;
-    }
-    .tagline strong { color: var(--target); font-weight: 800; }
-    .hero-actions {
+
+    .subhead strong { color: var(--ink); font-weight: 800; }
+
+    .cta-row {
       margin-top: 34px;
       display: flex;
-      gap: 14px;
-      justify-content: center;
       flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
     }
+
     .btn {
-      min-height: 52px;
+      position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+      min-height: 52px;
       padding: 0 20px;
       border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      color: var(--text);
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      transition: transform .22s ease, background .22s ease, border-color .22s ease;
-      cursor: pointer;
-    }
-    .btn:hover { transform: translateY(-2px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.22); }
-    .btn.primary {
-      color: #150805;
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--target), var(--fire-2) 42%, var(--fire));
-      box-shadow: 0 0 42px rgba(255,59,31,.36), 0 0 12px rgba(226,255,86,.2) inset;
-    }
-
-    .ticker-strip {
-      position: relative;
-      display: flex;
-      width: 100%;
+      border: 1px solid rgba(255,255,255,.16);
       overflow: hidden;
-      border-block: 1px solid var(--line-soft);
-      background: rgba(255,255,255,.03);
-      mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
-    }
-    .ticker-track {
-      display: flex;
-      gap: 28px;
-      padding: 18px 14px;
-      min-width: max-content;
-      animation: marquee 24s linear infinite;
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 800;
+      font-size: 12px;
+      font-weight: 900;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: #d3d3d3;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
     }
-    .ticker-track span { white-space: nowrap; }
-    .ticker-track b { color: var(--target); }
-    .ticker-track i { color: var(--fire-2); font-style: normal; }
+    .btn-primary {
+      color: #080603;
+      border-color: rgba(255,216,61,.8);
+      background: linear-gradient(135deg, #fff3a0, var(--ua-yellow) 38%, var(--amber) 72%, var(--fire));
+      box-shadow: 0 18px 62px rgba(255,138,0,.24);
+    }
+    .btn-ghost { color: var(--ink); background: rgba(255,255,255,.055); }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.34); }
 
-    .section {
-      padding: 110px 20px;
+    .mission-card {
       position: relative;
+      min-height: 520px;
+      border-radius: 34px;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.035)),
+        radial-gradient(circle at 50% 24%, rgba(255,216,61,.18), transparent 20rem),
+        rgba(0,0,0,.22);
+      box-shadow: 0 28px 90px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.12);
+      overflow: hidden;
+      backdrop-filter: blur(18px);
     }
-    .wrap { width: min(var(--max), 100%); margin: 0 auto; }
-    .section-kicker {
+
+    .mission-card::before {
+      content: "";
+      position: absolute;
+      inset: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(circle, transparent 0 30%, rgba(255,255,255,.055) 30.4% 30.8%, transparent 31.2% 46%, rgba(255,255,255,.075) 46.4% 46.8%, transparent 47.2%),
+        conic-gradient(from 180deg, transparent, rgba(255,216,61,.20), transparent, rgba(105,215,255,.16), transparent);
+      animation: spin 28s linear infinite;
+    }
+    .mission-card::after {
+      content: "";
+      position: absolute;
+      left: 17%;
+      right: 17%;
+      top: 53%;
+      height: 3px;
+      border-radius: 99px;
+      transform: rotate(-18deg);
+      background: linear-gradient(90deg, rgba(33,103,255,0), var(--ua-blue), var(--ua-yellow), var(--fire));
+      box-shadow: 0 0 35px rgba(255,176,0,.58);
+    }
+
+    .metric {
+      position: absolute;
+      z-index: 2;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(5,5,7,.56);
+      backdrop-filter: blur(16px);
+      padding: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.28);
+    }
+    .metric small {
+      display: block;
+      color: var(--dim);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .metric b {
+      display: block;
+      margin-top: 6px;
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+    .m1 { left: 26px; bottom: 28px; }
+    .m2 { right: 26px; top: 28px; text-align: right; }
+    .m3 { left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; min-width: 190px; }
+    .m3 b { font-size: 44px; background: linear-gradient(90deg, var(--ua-yellow), var(--fire)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    .section { padding: 100px 22px; position: relative; }
+    .container { width: min(var(--max), 100%); margin: 0 auto; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+    .kicker {
+      color: var(--gold);
       font-family: var(--mono);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: .16em;
       text-transform: uppercase;
-      color: var(--fire-2);
-      margin-bottom: 14px;
     }
-    .section-title {
-      margin: 0;
-      max-width: 820px;
-      font-size: clamp(38px, 6vw, 78px);
+    h2 {
+      margin: 10px 0 0;
+      font-size: clamp(38px, 6vw, 82px);
       line-height: .92;
-      letter-spacing: -.06em;
-      font-weight: 900;
+      letter-spacing: -.07em;
       text-transform: uppercase;
     }
     .section-copy {
-      max-width: 720px;
-      margin: 22px 0 0;
-      color: #b8b8b8;
+      color: var(--muted);
       font-size: 18px;
-      line-height: 1.62;
-      letter-spacing: -.015em;
+      line-height: 1.55;
+      max-width: 650px;
     }
 
-    .myth-grid {
-      display: grid;
-      grid-template-columns: 1fr .9fr;
-      gap: 22px;
-      align-items: stretch;
-      margin-top: 46px;
-    }
-    .trajectory {
-      min-height: 420px;
-      border-radius: 30px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),
-        radial-gradient(circle at 30% 75%, rgba(255,59,31,.32), transparent 28rem),
-        #090a0d;
-      overflow: hidden;
-      position: relative;
-      padding: 30px;
-      box-shadow: 0 24px 120px rgba(0,0,0,.32), inset 0 1px rgba(255,255,255,.07);
-    }
-    .axis {
-      position: absolute;
-      inset: 52px 38px 58px 58px;
-      border-left: 1px solid rgba(255,255,255,.16);
-      border-bottom: 1px solid rgba(255,255,255,.16);
-    }
-    .axis::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 84%;
-      height: 74%;
-      border-radius: 100% 0 0 0;
-      border-top: 3px solid var(--fire);
-      border-left: 0;
-      transform: skewX(-14deg);
-      filter: drop-shadow(0 0 18px rgba(255,59,31,.7));
-    }
-    .axis::after {
-      content: "TARGET 6B";
-      position: absolute;
-      right: -4px;
-      top: 22px;
-      color: var(--target);
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .12em;
-    }
-    .dot-start, .dot-end {
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--target);
-      box-shadow: 0 0 30px rgba(226,255,86,.75);
-    }
-    .dot-start { left: 52px; bottom: 50px; background: #fff; }
-    .dot-end { right: 66px; top: 83px; }
-    .chart-label {
-      position: absolute;
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .1em;
-      color: #e7e7e7;
-      text-transform: uppercase;
-    }
-    .label-start { left: 34px; bottom: 24px; }
-    .label-end { right: 40px; top: 54px; color: var(--target); }
-    .trajectory h3 {
-      margin: 0;
-      font-size: 18px;
-      font-family: var(--mono);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: #eee;
-    }
     .cards {
-      display: grid;
-      gap: 14px;
-    }
-    .mini-card {
-      padding: 22px;
-      border-radius: 22px;
-      border: 1px solid var(--line-soft);
-      background: rgba(255,255,255,.04);
-      min-height: 130px;
-    }
-    .mini-card .num {
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 900;
-      color: var(--fire-2);
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-    .mini-card h3 { margin: 12px 0 8px; font-size: 24px; line-height: 1; letter-spacing: -.04em; text-transform: uppercase; }
-    .mini-card p { margin: 0; color: #a9a9a9; line-height: 1.5; font-size: 15px; }
-
-    .lore {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin-top: 42px;
     }
-    .lore-card {
-      min-height: 270px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 22px;
-      border-radius: 26px;
-      border: 1px solid var(--line-soft);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),
-        #08090b;
-      overflow: hidden;
+    .card {
       position: relative;
+      min-height: 290px;
+      padding: 24px;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(circle at 80% 8%, rgba(255,216,61,.13), transparent 13rem),
+        linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.035));
+      overflow: hidden;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
     }
-    .lore-card::after {
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,216,61,.35);
+      background:
+        radial-gradient(circle at 80% 8%, rgba(255,216,61,.18), transparent 13rem),
+        linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.045));
+    }
+    .card-num {
+      font-family: var(--mono);
+      color: var(--dim);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .card h3 {
+      margin: 54px 0 14px;
+      font-size: 28px;
+      line-height: .95;
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+    }
+    .card p { margin: 0; color: var(--muted); line-height: 1.6; }
+    .card::after {
       content: "";
       position: absolute;
-      inset: auto -30% -50% -30%;
-      height: 170px;
-      background: radial-gradient(circle, rgba(255,59,31,.2), transparent 64%);
-      pointer-events: none;
-    }
-    .lore-card h3 { margin: 0; font-size: 28px; line-height: .95; letter-spacing: -.05em; text-transform: uppercase; }
-    .lore-card p { margin: 16px 0 0; color: #a8a8a8; line-height: 1.55; }
-    .glyph {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      display: grid;
-      place-items: center;
-      font-family: var(--mono);
-      font-weight: 900;
-      color: var(--target);
-      box-shadow: inset 0 0 30px rgba(226,255,86,.06);
+      right: -40px;
+      bottom: -40px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.10);
+      background: radial-gradient(circle, rgba(255,255,255,.08), transparent 58%);
     }
 
-    .quote-panel {
-      margin-top: 46px;
-      padding: clamp(28px, 5vw, 58px);
-      border-radius: 34px;
-      border: 1px solid rgba(226,255,86,.18);
-      background:
-        linear-gradient(135deg, rgba(226,255,86,.1), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
-      position: relative;
+    .marquee {
+      border-block: 1px solid rgba(255,255,255,.12);
       overflow: hidden;
+      background: rgba(255,255,255,.04);
     }
-    .quote-panel::before {
-      content: "";
-      position: absolute;
-      width: 280px;
-      aspect-ratio: 1;
-      right: -100px;
-      top: -80px;
-      border-radius: 50%;
-      border: 1px solid rgba(226,255,86,.16);
-      box-shadow: inset 0 0 0 60px rgba(226,255,86,.025), 0 0 80px rgba(226,255,86,.08);
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 24s linear infinite;
     }
-    .quote {
-      margin: 0;
-      max-width: 900px;
-      font-size: clamp(34px, 5.2vw, 72px);
-      line-height: .96;
-      letter-spacing: -.06em;
+    .marquee span {
+      display: inline-flex;
+      align-items: center;
+      padding: 18px 22px;
+      color: var(--ink);
+      font-size: 13px;
       font-weight: 900;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .marquee i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-left: 22px;
+      background: var(--ua-yellow);
+      box-shadow: 0 0 18px var(--ua-yellow);
+    }
+
+    .arc {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .big-panel {
+      position: relative;
+      min-height: 430px;
+      border-radius: 34px;
+      padding: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(circle at 16% 20%, rgba(33,103,255,.23), transparent 16rem),
+        radial-gradient(circle at 80% 76%, rgba(255,216,61,.18), transparent 18rem),
+        rgba(255,255,255,.045);
+    }
+    .big-panel h3 {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      max-width: 520px;
+      font-size: clamp(38px, 6vw, 86px);
+      line-height: .88;
+      letter-spacing: -.07em;
       text-transform: uppercase;
     }
-    .quote small {
+    .big-panel p {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      z-index: 2;
+      margin: 0;
+      max-width: 530px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+    .big-panel::after {
+      content: "2M → 6B";
+      position: absolute;
+      right: -22px;
+      bottom: 74px;
+      font-size: clamp(56px, 9vw, 128px);
+      font-weight: 900;
+      letter-spacing: -.08em;
+      color: rgba(255,255,255,.055);
+      transform: rotate(-8deg);
+    }
+
+    .stack { display: grid; gap: 18px; }
+    .mini {
+      border-radius: 28px;
+      padding: 24px;
+      min-height: 206px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+    }
+    .mini b {
       display: block;
-      margin-top: 22px;
-      color: #a7a7a7;
-      font-family: var(--mono);
-      font-size: 12px;
-      line-height: 1.7;
-      letter-spacing: .1em;
+      font-size: 42px;
+      letter-spacing: -.07em;
+      line-height: .9;
       text-transform: uppercase;
-      max-width: 690px;
     }
+    .mini p { color: var(--muted); line-height: 1.55; margin: 16px 0 0; }
+
+    .terminal {
+      border-radius: 34px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: #07080a;
+      overflow: hidden;
+      box-shadow: 0 26px 90px rgba(0,0,0,.34);
+    }
+    .terminal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      color: var(--dim);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .dots { display: flex; gap: 7px; }
+    .dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.22); }
+    .dots i:nth-child(1) { background: var(--fire); }
+    .dots i:nth-child(2) { background: var(--ua-yellow); }
+    .dots i:nth-child(3) { background: var(--green); }
+    .terminal pre {
+      margin: 0;
+      padding: 24px;
+      overflow: auto;
+      color: #d9ffe9;
+      font-family: var(--mono);
+      font-size: clamp(12px, 1.6vw, 15px);
+      line-height: 1.78;
+    }
+    .terminal .orange { color: var(--amber); }
+    .terminal .blue { color: var(--sky); }
+    .terminal .green { color: var(--green); }
 
     .token-grid {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
+      grid-template-columns: .9fr 1.1fr;
       gap: 18px;
-      margin-top: 44px;
+      align-items: stretch;
     }
     .token-card {
-      border-radius: 30px;
-      border: 1px solid var(--line-soft);
-      background: rgba(255,255,255,.04);
-      padding: 24px;
+      border-radius: 34px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(circle at 20% 16%, rgba(255,216,61,.16), transparent 14rem),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
     }
-    .big-ticker {
-      min-height: 360px;
+    .coin {
+      width: min(320px, 70vw);
+      aspect-ratio: 1;
+      margin: 18px auto;
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      text-align: center;
       background:
-        radial-gradient(circle at 50% 50%, rgba(255,59,31,.28), transparent 16rem),
-        radial-gradient(circle at 50% 50%, rgba(226,255,86,.08), transparent 27rem),
-        rgba(255,255,255,.035);
+        radial-gradient(circle at 36% 30%, rgba(255,255,255,.48), transparent 7%),
+        conic-gradient(from 210deg, var(--ua-blue), var(--sky), var(--ua-yellow), var(--amber), var(--fire), var(--ua-blue));
+      box-shadow: 0 0 90px rgba(255,176,0,.25), inset 0 0 0 14px rgba(0,0,0,.20), inset 0 0 0 1px rgba(255,255,255,.35);
+      animation: float 7s ease-in-out infinite;
     }
-    .big-ticker .symbol {
-      font-family: var(--mono);
-      font-size: clamp(72px, 10vw, 130px);
+    .coin span {
+      width: 72%;
+      height: 72%;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(3,3,5,.82);
+      border: 1px solid rgba(255,255,255,.18);
+      font-size: clamp(46px, 8vw, 86px);
       font-weight: 900;
-      letter-spacing: -.08em;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(246,244,238,.86);
-      text-shadow: 0 0 70px rgba(255,59,31,.4);
+      letter-spacing: -.12em;
+      text-indent: -.08em;
     }
-    .big-ticker .sub { margin-top: 10px; font-family: var(--mono); color: var(--target); font-weight: 900; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
-    .specs { display: grid; gap: 12px; }
-    .spec-row {
+    .specs { display: grid; gap: 10px; }
+    .spec {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line-soft);
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,.10);
       font-family: var(--mono);
-      font-size: 13px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-    .spec-row:last-child { border-bottom: 0; }
-    .spec-row span:first-child { color: #888; }
-    .spec-row span:last-child { color: #f2f2f2; font-weight: 800; text-align: right; }
-
-    .terminal {
-      margin-top: 44px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: #050607;
-      box-shadow: 0 30px 120px rgba(0,0,0,.45), inset 0 1px rgba(255,255,255,.07);
-      overflow: hidden;
-      font-family: var(--mono);
-    }
-    .terminal-top {
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 16px;
-      background: rgba(255,255,255,.045);
-      border-bottom: 1px solid var(--line-soft);
-      color: #8e8e8e;
       font-size: 12px;
-      letter-spacing: .1em;
       text-transform: uppercase;
     }
-    .lights { display: flex; gap: 7px; }
-    .lights i { width: 10px; height: 10px; border-radius: 50%; display: block; background: #424242; }
-    .lights i:nth-child(1){ background: var(--fire); } .lights i:nth-child(2){ background: var(--fire-2); } .lights i:nth-child(3){ background: var(--target); }
-    .terminal-body { padding: 22px; font-size: 13px; line-height: 1.85; color: #b7b7b7; overflow: auto; }
-    .terminal-body .cmd { color: var(--target); }
-    .terminal-body .warn { color: var(--fire-2); }
-    .terminal-body .ok { color: var(--green); }
+    .spec:last-child { border-bottom: 0; }
+    .spec span { color: var(--dim); }
+    .spec b { color: var(--ink); text-align: right; }
 
-    .footer {
-      padding: 70px 20px 34px;
-      border-top: 1px solid var(--line-soft);
-      color: #9c9c9c;
+    footer {
+      padding: 80px 22px 34px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,.035));
     }
     .footer-grid {
       width: min(var(--max), 100%);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
+      grid-template-columns: 1fr .9fr;
+      gap: 26px;
       align-items: end;
     }
-    .footer h2 {
-      margin: 0 0 14px;
-      color: var(--text);
-      font-size: clamp(34px, 5vw, 68px);
-      line-height: .92;
-      letter-spacing: -.06em;
+    footer h2 { max-width: 700px; }
+    .disclaimer {
+      color: var(--dim);
+      line-height: 1.65;
+      font-size: 13px;
+    }
+    .copyright {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding-top: 34px;
+      color: rgba(247,243,232,.36);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
-    .disclaimer {
-      max-width: 760px;
-      font-size: 13px;
-      line-height: 1.7;
-      color: #858585;
-    }
-    .footer-links { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
 
-    @keyframes rotate { to { transform: rotate(360deg); } }
-    @keyframes pulse { 50% { transform: scale(1.45); box-shadow: 0 0 0 9px rgba(226,255,86,.07), 0 0 34px rgba(226,255,86,.9); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+    @keyframes beam { 0%,100% { opacity: .48; } 50% { opacity: 1; } }
+    @keyframes blink { 0%,100% { transform: scale(.82); opacity: .65; } 50% { transform: scale(1.25); opacity: 1; } }
     @keyframes marquee { to { transform: translateX(-50%); } }
 
-    @media (max-width: 860px) {
-      .nav-links a:not(.nav-cta) { display: none; }
-      .nav-inner { height: 54px; }
-      .hero { padding-top: 108px; }
-      .myth-grid, .token-grid, .footer-grid { grid-template-columns: 1fr; }
-      .lore { grid-template-columns: 1fr; }
-      .trajectory { min-height: 340px; }
-      .footer-links { justify-content: flex-start; }
+    @media (max-width: 920px) {
+      .links a:not(.ticker-link) { display: none; }
+      .hero-grid, .section-head, .arc, .token-grid, .footer-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 116px; }
+      .mission-card { min-height: 420px; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: 230px; }
+      .card h3 { margin-top: 34px; }
+      .section { padding: 76px 18px; }
+      .big-panel { min-height: 390px; }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 560px) {
+      .nav { padding: 10px; }
       .brand span { display: none; }
-      .nav-cta { padding: 0 13px; font-size: 11px; }
-      .hero-actions .btn { width: 100%; }
-      .section { padding: 78px 16px; }
-      .hero { padding-left: 16px; padding-right: 16px; }
-      .mini-card, .lore-card, .token-card { border-radius: 20px; }
-      .quote-panel { border-radius: 24px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition: none !important; }
+      .hero { padding-inline: 16px; }
+      .cta-row { align-items: stretch; }
+      .btn { width: 100%; }
+      .mission-card { min-height: 360px; border-radius: 26px; }
+      .metric { padding: 12px; border-radius: 18px; }
+      .metric b { font-size: 23px; }
+      .m3 b { font-size: 34px; }
+      .m1 { left: 16px; bottom: 16px; }
+      .m2 { right: 16px; top: 16px; }
+      .card, .big-panel, .mini, .token-card, .terminal { border-radius: 24px; }
+      .big-panel p { position: relative; left: auto; right: auto; bottom: auto; margin-top: 140px; }
+      .spec { flex-direction: column; gap: 5px; }
+      .spec b { text-align: left; }
     }
   </style>
 </head>
 <body>
   <nav class="nav" aria-label="Primary navigation">
     <div class="nav-inner">
-      <a href="#top" class="brand" aria-label="Fire Point home"><i class="mark" aria-hidden="true"></i><span>Fire Point</span></a>
-      <div class="nav-links">
-        <a href="#myth">Myth</a>
-        <a href="#lore">Lore</a>
+      <a href="#top" class="brand" aria-label="Firepoint home"><i class="mark"></i><span>Firepoint</span></a>
+      <div class="links">
+        <a href="#signal">Signal</a>
+        <a href="#arc">Growth</a>
         <a href="#token">Token</a>
         <a href="#disclaimer">Disclaimer</a>
-        <a class="nav-cta" href="#token">$FPNT</a>
+        <a class="ticker-link" href="#token">$FPNT</a>
       </div>
     </div>
   </nav>
 
   <main id="top">
-    <section class="hero" aria-label="Fire Point hero">
-      <div class="orbital" aria-hidden="true"></div>
-      <div class="crosshair" aria-hidden="true"></div>
-      <div class="hero-card">
-        <div class="eyebrow"><i class="ping"></i> Ukrainian defense-tech lore / community meme</div>
-        <h1><span class="h-fire">Fire</span><br><span class="h-point">Point</span></h1>
-        <p class="tagline">The meme of a Ukrainian defense-tech rocket: Denis Shtilerman, battlefield engineering, and the impossible <strong>2M → 6B</strong> myth arc.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#myth">Find the ignition</a>
-          <a class="btn" href="#disclaimer">No affiliation. Pure meme.</a>
+    <section class="hero" aria-label="Firepoint hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow"><i class="pulse"></i> Ukrainian defense-tech inspired / positive meme only</div>
+          <h1><span class="gradient-text">Fire</span><span>Point</span></h1>
+          <p class="subhead">
+            A high-energy community meme inspired by <strong>Ukrainian engineering</strong>, precision technology, rocket-speed builders and the cleanest growth myth on the timeline: <strong>2M spark → 6B ignition</strong>.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#signal">Ignite the signal</a>
+            <a class="btn btn-ghost" href="#arc">See the trajectory</a>
+          </div>
+        </div>
+        <div class="mission-card" aria-label="2M to 6B trajectory visual">
+          <div class="metric m1"><small>Origin</small><b>2M</b></div>
+          <div class="metric m2"><small>Target Myth</small><b>6B</b></div>
+          <div class="metric m3"><small>Protocol</small><b>Launch</b></div>
         </div>
       </div>
     </section>
 
-    <div class="ticker-strip" aria-hidden="true">
-      <div class="ticker-track">
-        <span><b>2M → 6B</b></span><span><i>Ukrainian defense-tech legend</i></span><span>Denis Shtilerman lore</span><span>Battlefield engineering energy</span><span>From garage signal to billion-dollar myth</span><span><b>2M → 6B</b></span><span><i>Every chart has a fire point</i></span><span>Target acquired</span><span>Ignition confirmed</span><span>Small cap. Big coordinates.</span>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Positive fire only <i></i></span><span>Ukrainian engineering energy <i></i></span><span>Precision tech meme <i></i></span><span>2M spark <i></i></span><span>6B ignition <i></i></span><span>Fast builders faster memes <i></i></span>
+        <span>Positive fire only <i></i></span><span>Ukrainian engineering energy <i></i></span><span>Precision tech meme <i></i></span><span>2M spark <i></i></span><span>6B ignition <i></i></span><span>Fast builders faster memes <i></i></span>
       </div>
     </div>
 
-    <section class="section" id="myth">
-      <div class="wrap">
-        <div class="section-kicker">01 / the myth</div>
-        <h2 class="section-title">From Ukrainian defense-tech to meme mythology.</h2>
-        <p class="section-copy">The core lore is simple: Fire Point is framed as one of the most explosive Ukrainian defense companies — a precision, drones-and-missiles, wartime-builder story that the timeline compresses into one insane arc: <b>2M → 6B</b>.</p>
-
-        <div class="myth-grid">
-          <div class="trajectory" aria-label="2M to 6B trajectory visual">
-            <h3>Mission chart</h3>
-            <div class="axis"></div>
-            <div class="dot-start"></div>
-            <div class="dot-end"></div>
-            <div class="chart-label label-start">2M spark</div>
-            <div class="chart-label label-end">6B fire</div>
+    <section class="section" id="signal">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">01 / Signal locked</div>
+            <h2>Built where pressure creates diamonds.</h2>
           </div>
-          <div class="cards">
-            <article class="mini-card">
-              <div class="num">Signal 001</div>
-              <h3>Ukrainian fire</h3>
-              <p>Not generic defense-tech — the meme is powered by Ukraine’s wartime engineering mythology: fast, brutal, precise, necessary.</p>
-            </article>
-            <article class="mini-card">
-              <div class="num">Signal 002</div>
-              <h3>Denis Shtilerman</h3>
-              <p>The founder-name becomes part of the chant: operator energy, builder mythology, and a main-character arc for the trenches.</p>
-            </article>
-            <article class="mini-card">
-              <div class="num">Signal 003</div>
-              <h3>2M to 6B</h3>
-              <p>The cleanest meme: tiny origin, enormous destination. Not a promise — the lore engine people can repeat in one line.</p>
-            </article>
+          <p class="section-copy">
+            Firepoint is not about negativity. It is about speed, precision, teamwork and the kind of engineering optimism that turns a small spark into a huge shared myth.
+          </p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-num">Signal 001</div>
+            <h3>Ukrainian Engineering</h3>
+            <p>Clean, sharp, practical energy: build fast, aim higher, keep the mission simple and let execution speak.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">Signal 002</div>
+            <h3>Precision Meme</h3>
+            <p>No clutter, no drama. Just a crisp ticker, a strong visual identity, and one repeatable community line: find the fire point.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">Signal 003</div>
+            <h3>Positive Fire</h3>
+            <p>The vibe is optimistic: rocket trails, yellow-blue sparks, founder-free lore, and a chart arc people can share without baggage.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="arc">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">02 / Growth myth</div>
+            <h2>From spark to ignition.</h2>
+          </div>
+          <p class="section-copy">
+            The story is deliberately simple: a Ukrainian defense-tech inspired meme with rocket-speed growth energy. 2M is the spark. 6B is the myth. The community is the launch sequence.
+          </p>
+        </div>
+        <div class="arc">
+          <div class="big-panel">
+            <h3>2M spark. 6B ignition.</h3>
+            <p>Not a promise. Not advice. Just a clean meme trajectory: tiny origin, massive imagination, precision branding and positive momentum.</p>
+          </div>
+          <div class="stack">
+            <div class="mini">
+              <b>Fast builders.</b>
+              <p>Speed is the aesthetic: prototypes, launches, iteration, community creativity and a timeline that loves acceleration.</p>
+            </div>
+            <div class="mini">
+              <b>Faster memes.</b>
+              <p>The brand stays simple enough to raid, remix and repeat: Firepoint, precision, Ukrainian tech energy, positive fire only.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="lore">
-      <div class="wrap">
-        <div class="section-kicker">02 / main lore</div>
-        <h2 class="section-title">Denis. Defense. Trajectory.</h2>
-        <p class="section-copy">This is the missing center: Fire Point as the Ukrainian defense-sector monster, Denis Shtilerman as the name the timeline can rally around, and the <b>2M → 6B</b> path as the impossible growth legend. Simple enough for replies, strong enough for raids.</p>
-        <div class="lore">
-          <article class="lore-card">
-            <div class="glyph">2M</div>
-            <div><h3>The 2M spark</h3><p>Every legend needs a ridiculous starting point. The meme begins where nobody is looking.</p></div>
-          </article>
-          <article class="lore-card">
-            <div class="glyph">◎</div>
-            <div><h3>The Ukrainian point</h3><p>A red dot on the radar becomes a symbol for precision defense-tech, wartime urgency, and national-builder energy.</p></div>
-          </article>
-          <article class="lore-card">
-            <div class="glyph">6B</div>
-            <div><h3>The 6B myth</h3><p>The number is the hook. The story is the rocket. The timeline repeats it because it sounds too insane to ignore.</p></div>
-          </article>
-        </div>
+    <section class="section">
+      <div class="container">
+        <div class="terminal" aria-label="Launch terminal visual">
+          <div class="terminal-top"><span>FIREPOINT://MISSION-CONSOLE</span><span class="dots"><i></i><i></i><i></i></span></div>
+          <pre><span class="blue">› load narrative</span>
+  origin:        Ukrainian engineering energy
+  category:      defense-tech inspired community meme
+  tone:          positive / clean / high-conviction
 
-        <div class="quote-panel">
-          <p class="quote">They called it defense-tech. The timeline called it lore.<small>$FPNT is a community meme inspired by Ukrainian builder mythology, Denis Shtilerman’s public founder lore, precision, ignition and the 2M → 6B growth arc. No official connection to Fire Point, Denis Shtilerman, founders, employees or any real-world company.</small></p>
+<span class="orange">› arm ignition arc</span>
+  start:         2M spark
+  target:        6B myth
+  mode:          rocket-speed growth imagination
+
+<span class="green">✓ launch status</span>
+  precision:     online
+  community:     online
+  good vibes:    maximum
+  negativity:    disabled</pre>
         </div>
       </div>
     </section>
 
     <section class="section" id="token">
-      <div class="wrap">
-        <div class="section-kicker">03 / token shell</div>
-        <h2 class="section-title">Built for the trenches. Clean enough for the timeline.</h2>
-        <p class="section-copy">This direction now centers the actual narrative: Ukraine’s coolest defense-sector company as meme fuel, founder lore as the human anchor, and 2M → 6B as the raid-friendly chart myth.</p>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">03 / Token shell</div>
+            <h2>Clean enough for the timeline.</h2>
+          </div>
+          <p class="section-copy">
+            The token shell stays lightweight: strong ticker candidates, no complex claims, no heavy baggage — just a premium meme wrapper for Ukrainian defense-tech growth energy.
+          </p>
+        </div>
         <div class="token-grid">
-          <div class="token-card big-ticker">
-            <div>
-              <div class="symbol">$FPNT</div>
-              <div class="sub">Fire Point protocol: meme mode</div>
-            </div>
+          <div class="token-card">
+            <div class="coin"><span>FP</span></div>
           </div>
           <div class="token-card specs">
-            <div class="spec-row"><span>Name</span><span>Fire Point</span></div>
-            <div class="spec-row"><span>Ticker</span><span>$FPNT / $FPOINT candidate</span></div>
-            <div class="spec-row"><span>Supply</span><span>1,000,000,000 draft</span></div>
-            <div class="spec-row"><span>Tax</span><span>0 / 0 preferred</span></div>
-            <div class="spec-row"><span>Positioning</span><span>Ukrainian defense-tech lore</span></div>
-            <div class="spec-row"><span>Founder lore</span><span>Denis Shtilerman energy</span></div>
-            <div class="spec-row"><span>Core meme</span><span>2M → 6B trajectory</span></div>
-          </div>
-        </div>
-
-        <div class="terminal" aria-label="Launch terminal visual">
-          <div class="terminal-top"><span>firepoint://mission-console</span><div class="lights"><i></i><i></i><i></i></div></div>
-          <div class="terminal-body">
-            <div><span class="cmd">$</span> scan timeline --query "ukrainian defense-tech monster"</div>
-            <div><span class="ok">✓</span> lore found: Denis Shtilerman / Fire Point / 2M → 6B</div>
-            <div><span class="cmd">$</span> lock narrative --mode meme --precision high</div>
-            <div><span class="ok">✓</span> every chart has a fire point</div>
-            <div><span class="warn">!</span> disclaimer armed: no affiliation, no promises, pure community meme</div>
+            <div class="spec"><span>Name</span><b>Firepoint</b></div>
+            <div class="spec"><span>Ticker</span><b>$FPNT / $FPOINT candidate</b></div>
+            <div class="spec"><span>Supply</span><b>1,000,000,000 draft</b></div>
+            <div class="spec"><span>Tax</span><b>0 / 0 preferred</b></div>
+            <div class="spec"><span>Positioning</span><b>Ukrainian defense-tech meme</b></div>
+            <div class="spec"><span>Core line</span><b>2M spark → 6B ignition</b></div>
+            <div class="spec"><span>Tone</span><b>Positive fire only</b></div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer" id="disclaimer">
+  <footer id="disclaimer">
     <div class="footer-grid">
       <div>
+        <div class="kicker">Disclaimer armed</div>
         <h2>Find the fire point.</h2>
-        <p class="disclaimer"><b>Disclaimer:</b> Fire Point / $FPNT is a community meme concept using public founder/company lore as inspiration. It is not affiliated with, endorsed by, sponsored by, or connected to Fire Point, Denis Shtilerman, founders, employees, investors, government entities, defense companies, Ukraine’s defense sector, or any real-world organization. Nothing on this page is financial advice, an investment promise, a fundraising claim, or a claim of utility.</p>
       </div>
-      <div class="footer-links">
-        <a class="btn" href="#top">Back to top</a>
-        <a class="btn primary" href="#token">Prepare launch</a>
+      <p class="disclaimer">
+        Firepoint / $FPNT is an independent community meme concept inspired by public Ukrainian defense-tech, engineering, precision and growth narratives. It is not affiliated with, endorsed by, sponsored by, or connected to any real-world company, organization, founder, employee, investor or government entity. Nothing on this page is financial advice, an investment promise, fundraising material, or a claim of utility.
+      </p>
+      <div class="copyright">
+        <span>© Firepoint community concept</span>
+        <span>Positive fire only / 2M → 6B myth arc</span>
       </div>
     </div>
   </footer>
-
-  <script>
-    const nav = document.querySelector('.nav-inner');
-    window.addEventListener('scroll', () => {
-      const y = Math.min(window.scrollY / 300, 1);
-      nav.style.background = `rgba(5,5,7,${0.64 + y * 0.22})`;
-      nav.style.borderColor = `rgba(255,255,255,${0.06 + y * 0.08})`;
-    }, { passive: true });
-  </script>
 </body>
 </html>
