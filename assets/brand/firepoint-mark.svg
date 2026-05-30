@@ -1,0 +1,39 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Firepoint mark</title>
+  <desc id="desc">A cinematic FP ignition-point monogram with radar rings and amber flame geometry.</desc>
+  <defs>
+    <radialGradient id="g0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(336 112) rotate(128) scale(448)">
+      <stop stop-color="#1f4cff" stop-opacity="0.75"/>
+      <stop offset="0.42" stop-color="#071323" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#030407"/>
+    </radialGradient>
+    <linearGradient id="g1" x1="120" y1="86" x2="398" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="0.48" stop-color="#d9dde5"/>
+      <stop offset="1" stop-color="#7d8798"/>
+    </linearGradient>
+    <linearGradient id="fire" x1="181" y1="118" x2="336" y2="386" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff0b3"/>
+      <stop offset="0.36" stop-color="#d8a84a"/>
+      <stop offset="1" stop-color="#d86123"/>
+    </linearGradient>
+    <filter id="shadow" x="20" y="20" width="472" height="472" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#000" flood-opacity="0.55"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#d8a84a" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#g0)"/>
+  <rect x="28" y="28" width="456" height="456" rx="92" stroke="#F5F6F2" stroke-opacity="0.14" stroke-width="2"/>
+  <g opacity="0.34">
+    <circle cx="256" cy="256" r="170" stroke="#F5F6F2" stroke-width="2"/>
+    <circle cx="256" cy="256" r="112" stroke="#F5F6F2" stroke-width="1.5"/>
+    <path d="M86 256H426M256 86V426" stroke="#F5F6F2" stroke-width="1.5"/>
+  </g>
+  <path d="M78 366H434" stroke="url(#fire)" stroke-width="10" stroke-linecap="round" opacity="0.95"/>
+  <g filter="url(#shadow)">
+    <path d="M154 124H294C339 124 369 151 369 192C369 232 340 258 294 258H213V331H154V124ZM213 176V207H287C301 207 310 201 310 191C310 181 301 176 287 176H213Z" fill="url(#g1)"/>
+    <path d="M222 286H350V339H281V392H222V286Z" fill="url(#g1)"/>
+    <path d="M323 116C333 150 329 180 310 207C350 194 377 207 393 246C408 281 400 318 371 357C371 311 347 285 300 278C334 250 347 215 338 174C335 153 329 134 323 116Z" fill="url(#fire)"/>
+  </g>
+  <path d="M116 410H396" stroke="#D8A84A" stroke-width="6" stroke-linecap="round"/>
+</svg>
