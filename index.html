@@ -3,14 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Firepoint — $FIREPOINT</title>
-  <meta name="description" content="A cinematic Ukrainian defense-tech inspired community meme: precision, ignition, velocity. $2M spark → $6B myth arc. Positive-only, independent, no affiliation." />
+  <title>Firepoint — $FIREPOINT | Find the fire point</title>
+  <meta name="description" content="A cinematic defense-tech inspired community meme on Solana: precision, ignition, velocity. $2M spark → $6B myth arc. Positive-only, independent, no affiliation, no advice." />
+  <link rel="canonical" href="https://firepoint.meme/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/assets/brand/firepoint-mark.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/icons/firepoint-icon-180.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://firepoint.meme/" />
   <meta property="og:title" content="Firepoint — $FIREPOINT" />
-  <meta property="og:description" content="Precision meme energy. Ukrainian engineering inspiration. $2M spark → $6B ignition." />
+  <meta property="og:description" content="Precision meme energy on Solana. $2M spark → $6B myth arc. Positive fire only. Independent community concept — no affiliation, no advice." />
+  <meta property="og:image" content="https://firepoint.meme/assets/social/x-banner-firepoint.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@firepointmeme" />
+  <meta name="twitter:title" content="Firepoint — $FIREPOINT" />
+  <meta name="twitter:description" content="Precision meme energy on Solana. $2M spark → $6B myth arc. Positive fire only." />
+  <meta name="twitter:image" content="https://firepoint.meme/assets/social/x-banner-firepoint.png" />
   <meta name="theme-color" content="#02030a" />
   <!-- Apple-style typography: native SF Pro / system stack, no webfont load. -->
   <style>
@@ -23,56 +32,384 @@
     }
     *{box-sizing:border-box} html{scroll-behavior:smooth;background:#050608;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility} body{margin:0;color:var(--ink);font-family:var(--sans);overflow-x:hidden;background:linear-gradient(180deg,#050608 0%,#090a0d 48%,#030405 100%);letter-spacing:-.006em}
     a{color:inherit;text-decoration:none} ::selection{background:#e4b455;color:#050505}
-    .noise,.grid,.scan{position:fixed;inset:0;pointer-events:none}.noise{z-index:80;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");mix-blend-mode:soft-light}.grid,.scan{display:none}
+    .noise{position:fixed;inset:0;pointer-events:none;z-index:80;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");mix-blend-mode:soft-light}
+    /* ============ BOOT SEQUENCE ============ */
+    #boot{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#02030a;transition:opacity .6s ease,visibility .6s}#boot.done{opacity:0;visibility:hidden}#boot.off{display:none}
+    .boot-inner{width:min(420px,82vw);text-align:left}.boot-logo{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.18em;font-size:15px;text-transform:uppercase}.boot-logo img{width:34px;height:34px}.boot-logo i{color:#f4d38b;font-style:normal}
+    #bootline{margin-top:26px;min-height:16px;font:700 11px/1.5 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(245,246,242,.55)}#bootline b{color:#f4d38b}
+    .boot-bar{margin-top:14px;height:2px;background:rgba(245,246,242,.12);overflow:hidden}.boot-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2f6cff,#d8a84a,#d86123);animation:bootfill 1.5s ease-out forwards}
+    @keyframes bootfill{0%{width:0}55%{width:62%}100%{width:100%}}
+    /* ============ NAV ============ */
     .nav{position:fixed;top:0;left:0;right:0;z-index:70;padding:18px;display:flex;justify-content:center}.nav-inner{width:min(var(--max),calc(100vw - 28px));height:58px;display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid rgba(245,246,242,.14);background:rgba(5,6,8,.72);backdrop-filter:blur(24px) saturate(120%);box-shadow:0 18px 70px rgba(0,0,0,.42)}
     .brand{display:flex;align-items:center;gap:12px;padding-left:16px;font-weight:700;letter-spacing:.03em;font-size:13px;text-transform:uppercase}.mark{width:36px;height:36px;display:grid;place-items:center;border:1px solid rgba(245,246,242,.22);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));box-shadow:inset 0 1px rgba(255,255,255,.18),0 14px 40px rgba(0,0,0,.45);overflow:hidden}.mark img{width:31px;height:31px;display:block;filter:drop-shadow(0 7px 10px rgba(0,0,0,.45))}
     .links{display:flex;align-items:center;height:100%}.links a{height:100%;display:grid;place-items:center;padding:0 15px;border-left:1px solid rgba(255,255,255,.07);color:rgba(245,246,242,.68);font-size:12px;font-weight:600;letter-spacing:.075em;text-transform:uppercase}.links a:hover{color:var(--ink);background:rgba(255,255,255,.055)}.links .ticker{color:#f4d38b;background:rgba(216,168,74,.075);border-left:1px solid rgba(216,168,74,.28);box-shadow:inset 0 0 0 1px rgba(216,168,74,.18);min-width:124px;font-weight:800}
-    main{position:relative;z-index:2}.hero{min-height:100svh;position:relative;display:grid;align-items:center;overflow:hidden;padding:126px 22px 74px;background:radial-gradient(circle at 82% 18%,rgba(216,168,74,.12),transparent 32rem),radial-gradient(circle at 14% 12%,rgba(47,108,255,.18),transparent 36rem),linear-gradient(180deg,#090b10 0%,#050608 76%)}
-    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,6,8,.96) 0%,rgba(5,6,8,.78) 48%,rgba(5,6,8,.28) 100%)}
-    .hero:after{content:"";position:absolute;left:22px;right:22px;bottom:28px;height:1px;background:linear-gradient(90deg,transparent,rgba(245,246,242,.32),transparent);opacity:.65}.hero-wrap{width:min(var(--max),100%);margin:0 auto;position:relative;z-index:3;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:end}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 13px;border:1px solid rgba(245,246,242,.16);border-radius:0;background:rgba(255,255,255,.045);font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:rgba(245,246,242,.72)}.dot{width:6px;height:6px;border-radius:50%;background:#77d88f;box-shadow:0 0 14px rgba(119,216,143,.55);animation:pulse 1.8s infinite}
-    h1{margin:24px 0 0;font-size:clamp(76px,12vw,158px);line-height:.88;letter-spacing:-.07em;font-weight:800;max-width:1040px}.h1-fire{display:block;color:#f5f6f2;background:none;-webkit-background-clip:initial;background-clip:initial;filter:none}.h1-point{display:block;color:#cfd3d8;transform:none}.h1-fire:after{content:"";display:block;width:min(28vw,320px);height:4px;margin:18px 0 0;background:linear-gradient(90deg,#f5f6f2,#d8a84a,transparent)}
-    .sub{margin:28px 0 0;max-width:720px;color:rgba(245,246,242,.76);font-size:clamp(20px,2.05vw,27px);line-height:1.48;letter-spacing:-.018em;font-weight:400}.sub strong{color:#fff;font-weight:700}.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}.btn{min-height:50px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;border:1px solid rgba(245,246,242,.24);border-radius:0;font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;transition:.22s}.btn-primary{color:#050608;border-color:rgba(245,246,242,.92);background:#f5f6f2;box-shadow:none}.btn-ghost{background:rgba(255,255,255,.04)}.btn:hover{transform:translateY(-1px);filter:none;background:#fff;color:#050608}
-    .console{min-height:540px;position:relative;border:1px solid rgba(245,246,242,.16);background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));box-shadow:0 42px 120px rgba(0,0,0,.46);overflow:hidden}.console:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,6,8,.12),rgba(5,6,8,.62));z-index:1}.console:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(216,168,74,.72),transparent);z-index:2}.chip{position:absolute;z-index:3;padding:15px;border:1px solid rgba(245,246,242,.18);background:rgba(5,6,8,.74);backdrop-filter:blur(14px)}.chip small{display:block;color:rgba(245,246,242,.48);font:800 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}.chip b{display:block;margin-top:7px;font-size:34px;line-height:.9;letter-spacing:-.045em}.c1{left:26px;bottom:26px}.c2{right:26px;top:26px;text-align:right}.c3{left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;min-width:190px}.c3 b{font-size:48px;color:#f4d38b;background:none;-webkit-background-clip:initial;background-clip:initial}
-    .strip{border-block:1px solid rgba(245,246,242,.12);background:#07080a;overflow:hidden}.track{display:flex;width:max-content;animation:marquee 32s linear infinite}.track span{display:flex;align-items:center;gap:18px;padding:18px 24px;font-size:12px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;white-space:nowrap;color:rgba(245,246,242,.64)}.track i{width:4px;height:4px;border-radius:50%;background:#d8a84a;box-shadow:none}
-    .section{position:relative;padding:105px 22px}.container{width:min(var(--max),100%);margin:0 auto}.head{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:end;margin-bottom:34px}.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d8a84a}h2{margin:12px 0 0;font-size:clamp(42px,5.6vw,76px);line-height:1.04;letter-spacing:-.055em;font-weight:800}.copy{max-width:700px;color:var(--muted);font-size:19px;line-height:1.55;letter-spacing:-.01em}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,246,242,.12);border:1px solid rgba(245,246,242,.12)}.card{min-height:310px;padding:26px;background:#090a0d;position:relative;overflow:hidden}.card:hover:before{opacity:.9;transform:none}.card:before{content:"";position:absolute;left:26px;right:26px;top:0;height:1px;background:linear-gradient(90deg,rgba(245,246,242,.38),rgba(216,168,74,.48),transparent);opacity:.65;transition:.3s}.num{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,246,242,.48)}.card h3{position:relative;margin:74px 0 15px;font-size:30px;line-height:1.08;letter-spacing:-.035em;font-weight:700}.card p{position:relative;color:var(--muted);line-height:1.6;margin:0;font-size:16px}.bluebar{height:1px;background:linear-gradient(90deg,transparent,rgba(216,168,74,.75),transparent)}
-    .mission{display:grid;grid-template-columns:1.1fr .9fr;gap:1px;background:rgba(245,246,242,.12);border:1px solid rgba(245,246,242,.12)}.mission-main,.mission-side{background:#08090b;padding:30px;min-height:430px}.mission-main{position:relative;overflow:hidden}.mission-main h3{margin:0;max-width:800px;font-size:clamp(48px,7.6vw,104px);line-height:1.01;letter-spacing:-.07em;font-weight:800}.mission-main p{position:absolute;left:30px;right:30px;bottom:30px;max-width:680px;color:var(--muted);font-size:19px;line-height:1.55}.mission-main:after{content:"";position:absolute;left:30px;right:30px;bottom:140px;height:1px;background:linear-gradient(90deg,#f5f6f2,#d8a84a,transparent);opacity:.8}.step{padding:24px 0;border-bottom:1px solid rgba(245,246,242,.12)}.step:first-child{padding-top:0}.step:last-child{border:0}.step b{font-size:24px;letter-spacing:-.025em;font-weight:700}.step p{color:var(--muted);line-height:1.6;margin:9px 0 0}
-    .story{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}.story-panel{background:#050711;padding:30px;min-height:360px}.story-panel h3{margin:0 0 18px;font-size:clamp(34px,4vw,54px);line-height:1.05;letter-spacing:-.05em}.story-panel p{color:var(--muted);font-size:18px;line-height:1.55;margin:0 0 16px}.story-list{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-top:0}.story-item{display:grid;grid-template-columns:170px 1fr;gap:24px;background:#060813;padding:24px}.story-item b{font-size:22px;letter-spacing:-.035em}.story-item span{color:var(--muted);line-height:1.55}.legend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.legend{background:#060813;padding:26px;min-height:250px}.legend strong{display:block;margin-bottom:54px;color:#2997ff;font-size:14px;font-weight:600}.legend h3{margin:0 0 14px;font-size:28px;line-height:1.08;letter-spacing:-.045em}.legend p{margin:0;color:var(--muted);line-height:1.55}.source-note{margin-top:16px;color:var(--dim);font-size:13px;line-height:1.5}.art-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1px}.art-card{position:relative;min-height:360px;overflow:hidden;background:#050711;margin:0}.art-card img,.console-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.art-card img{opacity:.9;filter:saturate(1.08) contrast(1.06)}.console-art{z-index:0;opacity:.34;filter:saturate(1.08) contrast(1.08);mix-blend-mode:screen}.art-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,5,12,.04),rgba(3,5,12,.84)),radial-gradient(circle at 22% 18%,rgba(0,113,227,.24),transparent 42%);pointer-events:none}.art-caption{position:absolute;left:24px;right:24px;bottom:22px;z-index:2}.art-caption b{display:block;font-size:13px;color:#2997ff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}.art-caption span{display:block;max-width:620px;color:rgba(248,251,255,.88);font-size:19px;line-height:1.36;letter-spacing:-.025em}
-    .terminal{border:1px solid var(--line);background:#02030a;box-shadow:0 32px 90px rgba(0,0,0,.38);overflow:hidden}.terminal-top{display:flex;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line);font:800 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);background:rgba(255,255,255,.05)}pre{margin:0;padding:26px;white-space:pre-wrap;font:700 clamp(13px,1.8vw,18px)/1.65 var(--mono);color:rgba(248,251,255,.82)}.o{color:var(--orange)}.b{color:#61a2ff}.g{color:#4cff94}.y{color:var(--amber)}
-    .token{display:grid;grid-template-columns:.9fr 1.1fr;gap:1px;background:rgba(245,246,242,.12);border:1px solid rgba(245,246,242,.12)}.coinbox,.specs{background:#090a0d;padding:30px;min-height:430px}.coin{height:100%;min-height:360px;display:grid;place-items:center;border:1px solid rgba(245,246,242,.14);background:radial-gradient(circle,rgba(216,168,74,.12),transparent 30%),#050608}.coin span{width:min(72vw,310px);aspect-ratio:1;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(245,246,242,.28);background:linear-gradient(145deg,#15181f,#050608);box-shadow:inset 0 1px rgba(255,255,255,.16),0 34px 90px rgba(0,0,0,.42);color:#f4d38b;font-size:clamp(52px,9vw,96px);font-weight:800;letter-spacing:-.055em;text-shadow:none}.spec{display:flex;justify-content:space-between;gap:18px;padding:17px 0;border-bottom:1px solid rgba(245,246,242,.12)}.spec span{font-size:12px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--dim)}.spec b{text-align:right;font-size:18px;font-weight:700}.spec:last-child{border:0}
-    footer{padding:82px 22px;background:#010207;border-top:1px solid var(--line)}.foot{width:min(var(--max),100%);margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:34px}.disclaimer{color:var(--muted);line-height:1.7;margin:0}.copyright{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:28px;border-top:1px solid var(--line);color:var(--dim);font:800 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-    @keyframes spin{to{transform:rotate(360deg)}}@keyframes burn{from{opacity:.55;filter:blur(1px)}to{opacity:1;filter:blur(0)}}@keyframes pulse{50%{opacity:.25;transform:scale(.72)}}@keyframes marquee{to{transform:translateX(-50%)}}
-    @media (max-width:900px){.hero-wrap,.head,.mission,.story,.token,.foot{grid-template-columns:1fr}.console{min-height:430px}.cards,.legend-grid,.art-grid{grid-template-columns:1fr}.links a:not(.ticker){display:none}.mission-main p{position:relative;left:auto;right:auto;bottom:auto;margin-top:150px}.story-item{grid-template-columns:1fr;gap:10px}.section{padding:76px 18px}.hero{padding-inline:18px}.nav{padding:12px}.nav-inner{width:calc(100vw - 24px)}}
-    @media (max-width:520px){.brand span{display:none}.links .ticker{min-width:auto;padding:0 14px}.cta{align-items:stretch}.btn{width:100%}h1{font-size:clamp(70px,22vw,104px)}.console{min-height:360px}.chip{padding:12px}.chip b{font-size:25px}.c3 b{font-size:35px}.mission-main,.mission-side,.coinbox,.specs,pre{padding:20px}.spec{flex-direction:column;gap:6px}.spec b{text-align:left}.copyright{display:block}.copyright span{display:block;margin:10px 0}}
+    .links .buy-link{color:#050608;background:#f4d38b;border-left:1px solid rgba(216,168,74,.4);font-weight:800;position:relative;overflow:hidden}.links .buy-link:hover{background:#ffe2a1;color:#050608}
+    /* ============ HERO ============ */
+    main{position:relative;z-index:2}.hero{min-height:100svh;position:relative;display:grid;align-items:center;overflow:hidden;padding:126px 22px 86px;background:radial-gradient(circle at 82% 18%,rgba(216,168,74,.12),transparent 32rem),radial-gradient(circle at 14% 12%,rgba(47,108,255,.18),transparent 36rem),linear-gradient(180deg,#090b10 0%,#050608 76%)}
+    .hero:after{content:"";position:absolute;left:22px;right:22px;bottom:28px;height:1px;background:linear-gradient(90deg,transparent,rgba(245,246,242,.32),transparent);opacity:.65}
+    #skyfield{position:absolute;inset:0;z-index:1;pointer-events:none}
+    .hero-glow{position:absolute;z-index:1;pointer-events:none;width:46rem;height:46rem;border-radius:50%;left:-12rem;bottom:-22rem;background:radial-gradient(circle,rgba(216,97,35,.14),transparent 60%);filter:blur(10px);animation:breathe 7s ease-in-out infinite alternate}
+    .hud{position:absolute;z-index:4;font:700 10px/1.6 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(245,246,242,.4);pointer-events:none}.hud b{color:rgba(244,211,139,.85);font-weight:700}.hud-tl{left:26px;top:96px}.hud-tr{right:26px;top:96px;text-align:right}.hud-bl{left:26px;bottom:44px}.hud-br{right:26px;bottom:44px;text-align:right}
+    .hud-tl:before,.hud-tr:before{content:"";position:absolute;top:-8px;width:26px;height:26px;border-top:1px solid rgba(244,211,139,.5)}.hud-tl:before{left:-6px;border-left:1px solid rgba(244,211,139,.5)}.hud-tr:before{right:-6px;border-right:1px solid rgba(244,211,139,.5)}
+    .hero-wrap{width:min(var(--max),100%);margin:0 auto;position:relative;z-index:3;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:end}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 13px;border:1px solid rgba(245,246,242,.16);background:rgba(255,255,255,.045);font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:rgba(245,246,242,.72);opacity:0;animation:riseIn .8s cubic-bezier(.2,.7,.2,1) .15s forwards}.dot{width:6px;height:6px;border-radius:50%;background:#77d88f;box-shadow:0 0 14px rgba(119,216,143,.55);animation:pulse 1.8s infinite}
+    h1{margin:24px 0 0;font-size:clamp(76px,12vw,158px);line-height:.88;letter-spacing:-.07em;font-weight:800;max-width:1040px}
+    .h1-fire{display:block;background:linear-gradient(98deg,#f5f6f2 6%,#f4d38b 42%,#e8742f 78%,#d86123 96%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 28px rgba(216,97,35,.22));opacity:0;animation:riseIn .9s cubic-bezier(.2,.7,.2,1) .3s forwards}
+    .h1-point{display:block;color:#cfd3d8;opacity:0;animation:riseIn .9s cubic-bezier(.2,.7,.2,1) .45s forwards}
+    .h1-fire:after{content:"";display:block;width:0;height:4px;margin:18px 0 0;background:linear-gradient(90deg,#f5f6f2,#d8a84a,#d86123 85%,transparent);box-shadow:0 0 18px rgba(216,168,74,.55);animation:fuse 1.6s cubic-bezier(.6,.05,.2,1) 1s forwards}
+    .sub{margin:28px 0 0;max-width:720px;color:rgba(245,246,242,.76);font-size:clamp(20px,2.05vw,27px);line-height:1.48;letter-spacing:-.018em;font-weight:400;opacity:0;animation:riseIn .9s cubic-bezier(.2,.7,.2,1) .6s forwards}.sub strong{color:#fff;font-weight:700}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;opacity:0;animation:riseIn .9s cubic-bezier(.2,.7,.2,1) .75s forwards}
+    .btn{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:0 22px;border:1px solid rgba(245,246,242,.24);font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;transition:.22s;cursor:pointer}.btn-ghost{background:rgba(255,255,255,.04)}.btn:hover{transform:translateY(-1px);background:#fff;color:#050608}
+    .btn-fire{color:#050608;border-color:rgba(216,168,74,.9);background:linear-gradient(120deg,#f4d38b,#d8a84a 55%,#d86123);box-shadow:0 14px 44px rgba(216,97,35,.28);position:relative;overflow:hidden}.btn-fire:hover{transform:translateY(-1px);background:linear-gradient(120deg,#ffe2a1,#e9bd62 55%,#e8742f);color:#050608;box-shadow:0 18px 54px rgba(216,97,35,.42)}.btn-fire:after{content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.55),transparent);animation:sheen 3.4s ease-in-out infinite}
+    .ca-bar{display:flex;flex-wrap:wrap;align-items:center;margin-top:22px;border:1px solid rgba(216,168,74,.30);background:rgba(5,6,8,.72);backdrop-filter:blur(12px);max-width:640px;opacity:0;animation:riseIn .9s cubic-bezier(.2,.7,.2,1) .9s forwards}.ca-bar small{padding:14px;font:800 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#f4d38b;border-right:1px solid rgba(216,168,74,.22);white-space:nowrap}.ca-bar code{flex:1;min-width:180px;padding:14px;font:700 13px/1.2 var(--mono);color:rgba(245,246,242,.82);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ca-bar button{align-self:stretch;padding:0 16px;border:0;border-left:1px solid rgba(216,168,74,.22);background:rgba(216,168,74,.10);color:#f4d38b;font:800 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s}.ca-bar button:hover{background:rgba(216,168,74,.22)}
+    /* hero console */
+    .console-tilt{opacity:0;animation:riseIn 1s cubic-bezier(.2,.7,.2,1) .5s forwards}
+    .console{min-height:540px;position:relative;border:1px solid rgba(245,246,242,.16);background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));box-shadow:0 42px 120px rgba(0,0,0,.46);overflow:hidden}
+    .console-art{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;z-index:0;opacity:.4;filter:saturate(1.1) contrast(1.1);mix-blend-mode:screen;animation:kenburns 22s ease-in-out infinite alternate}
+    .console:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,6,8,.10),rgba(5,6,8,.6));z-index:1}.console:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(216,168,74,.72),transparent);z-index:2}
+    .scanline{position:absolute;left:0;right:0;top:-2px;height:2px;z-index:2;background:linear-gradient(90deg,transparent,rgba(111,143,255,.75),transparent);box-shadow:0 0 18px rgba(111,143,255,.5);animation:scanY 5.5s linear infinite}
+    .reticle{position:absolute;inset:0;z-index:2;margin:auto;width:min(64%,330px);aspect-ratio:1;pointer-events:none}.reticle .r-spin{animation:spin 26s linear infinite;transform-origin:50% 50%}.reticle .r-spin2{animation:spin 14s linear infinite reverse;transform-origin:50% 50%}
+    .chip{position:absolute;z-index:3;padding:15px;border:1px solid rgba(245,246,242,.18);background:rgba(5,6,8,.74);backdrop-filter:blur(14px)}.chip small{display:block;color:rgba(245,246,242,.48);font:800 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}.chip b{display:block;margin-top:7px;font-size:34px;line-height:.9;letter-spacing:-.045em;animation:flicker 6s steps(60) infinite}.c1{left:26px;bottom:26px}.c2{right:26px;top:26px;text-align:right}.c3{left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;min-width:190px;border-color:rgba(216,168,74,.4);box-shadow:0 0 0 1px rgba(216,168,74,.12),0 0 44px rgba(216,168,74,.12)}.c3 b{font-size:48px;color:#f4d38b}
+    /* ============ STRIPS ============ */
+    .strip{border-block:1px solid rgba(245,246,242,.12);background:#07080a;overflow:hidden}.track{display:flex;width:max-content;animation:marquee 32s linear infinite}.track.rev{animation:marqueeRev 38s linear infinite}.track span{display:flex;align-items:center;gap:18px;padding:15px 24px;font-size:12px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;white-space:nowrap;color:rgba(245,246,242,.64)}.track.rev span{color:rgba(111,143,255,.55)}.track i{width:4px;height:4px;border-radius:50%;background:#d8a84a}.track.rev i{background:#2f6cff}.strip+.strip{border-top:0}
+    /* ============ SECTIONS ============ */
+    .section{position:relative;padding:105px 22px}.container{width:min(var(--max),100%);margin:0 auto}.head{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:end;margin-bottom:34px}.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d8a84a}h2{margin:12px 0 0;font-size:clamp(42px,5.6vw,76px);line-height:1.04;letter-spacing:-.055em;font-weight:800}.copy{max-width:700px;color:var(--muted);font-size:19px;line-height:1.55;letter-spacing:-.01em}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,246,242,.12);border:1px solid rgba(245,246,242,.12)}
+    .card{min-height:310px;padding:26px;background:#090a0d;position:relative;overflow:hidden;transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .18s ease}
+    .card:before{content:"";position:absolute;left:26px;right:26px;top:0;height:1px;background:linear-gradient(90deg,rgba(245,246,242,.38),rgba(216,168,74,.48),transparent);opacity:.65;transition:.3s}.card:hover:before{opacity:.95}
+    .card:after{content:"";position:absolute;inset:0;background:radial-gradient(260px at var(--mx,50%) var(--my,50%),rgba(216,168,74,.13),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}.card:hover:after{opacity:1}
+    .num{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,246,242,.48)}.card h3{position:relative;margin:74px 0 15px;font-size:30px;line-height:1.08;letter-spacing:-.035em;font-weight:700}.card p{position:relative;color:var(--muted);line-height:1.6;margin:0;font-size:16px}.bluebar{height:1px;background:linear-gradient(90deg,transparent,rgba(216,168,74,.75),transparent)}
+    .story{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}.story-panel{background:#050711;padding:30px;min-height:360px}.story-panel h3{margin:0 0 18px;font-size:clamp(34px,4vw,54px);line-height:1.05;letter-spacing:-.05em}.story-panel p{color:var(--muted);font-size:18px;line-height:1.55;margin:0 0 16px}
+    .story-list{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-top:0}.story-item{display:grid;grid-template-columns:170px 1fr;gap:24px;background:#060813;padding:24px}.story-item b{font-size:22px;letter-spacing:-.035em}.story-item span{color:var(--muted);line-height:1.55}
+    .legend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.legend{background:#060813;padding:26px;min-height:250px;position:relative;overflow:hidden;transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .18s ease}.legend:after{content:"";position:absolute;inset:0;background:radial-gradient(240px at var(--mx,50%) var(--my,50%),rgba(47,108,255,.12),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}.legend:hover:after{opacity:1}.legend strong{display:block;margin-bottom:54px;color:#2997ff;font-size:14px;font-weight:600}.legend h3{margin:0 0 14px;font-size:28px;line-height:1.08;letter-spacing:-.045em}.legend p{margin:0;color:var(--muted);line-height:1.55}
+    .source-note{margin-top:16px;color:var(--dim);font-size:13px;line-height:1.5}
+    /* art cards */
+    .art-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1px}.art-card{position:relative;min-height:380px;overflow:hidden;background:#050711;margin:0}.art-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9;filter:saturate(1.08) contrast(1.06);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}.art-card:hover img{transform:scale(1.07)}
+    .art-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,5,12,.04),rgba(3,5,12,.84)),radial-gradient(circle at 22% 18%,rgba(0,113,227,.24),transparent 42%);pointer-events:none}
+    .art-card .corner{position:absolute;width:22px;height:22px;z-index:3;opacity:.7}.corner.tl{left:12px;top:12px;border-left:1px solid #f4d38b;border-top:1px solid #f4d38b}.corner.br{right:12px;bottom:12px;border-right:1px solid #f4d38b;border-bottom:1px solid #f4d38b}
+    .art-scan{position:absolute;left:0;right:0;top:-2px;height:2px;z-index:2;background:linear-gradient(90deg,transparent,rgba(244,211,139,.6),transparent);animation:scanY 7s linear infinite}
+    .art-caption{position:absolute;left:24px;right:24px;bottom:22px;z-index:3}.art-caption b{display:block;font-size:13px;color:#2997ff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}.art-caption span{display:block;max-width:620px;color:rgba(248,251,255,.88);font-size:18px;line-height:1.36;letter-spacing:-.025em}
+    /* flamingo vector card */
+    .vector-card{display:grid;place-items:center;background:radial-gradient(circle at 50% 42%,rgba(216,168,74,.10),transparent 58%),#050711}
+    .vector-card svg{width:88%;max-width:420px;animation:floaty 7s ease-in-out infinite}
+    .fp-path{fill:none;stroke:#f4d38b;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round;filter:drop-shadow(0 0 7px rgba(244,211,139,.45));stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s ease .3s}
+    .fp-path.blue{stroke:#6f8fff;filter:drop-shadow(0 0 7px rgba(111,143,255,.4))}.fp-path.orange{stroke:#e8742f;filter:drop-shadow(0 0 8px rgba(216,97,35,.5))}
+    .lit .fp-path{stroke-dashoffset:0}.lit .fp-path.d2{transition-delay:.9s}.lit .fp-path.d3{transition-delay:1.5s}.lit .fp-path.d4{transition-delay:2s}
+    .fp-star{fill:#f4d38b;opacity:0;animation:twinkle 3s ease-in-out infinite}.lit .fp-star{opacity:1}
+    /* ============ TRAJECTORY ============ */
+    .traj-panel{position:relative;border:1px solid var(--line);background:linear-gradient(180deg,#070910,#04050b);overflow:hidden;padding:26px}
+    .traj-panel .panel-top{display:flex;justify-content:space-between;font:800 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}.traj-panel .panel-top b{color:#f4d38b}
+    .traj-svg{display:block;width:100%;height:auto}
+    .traj-grid line{stroke:rgba(245,246,242,.06)}
+    .traj-area{fill:url(#trajfill);opacity:0;transition:opacity 1.4s ease 1.6s}.lit .traj-area{opacity:1}
+    .traj-path{fill:none;stroke:url(#trajgrad);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.6s cubic-bezier(.4,0,.2,1) .3s}.lit .traj-path{stroke-dashoffset:0}
+    .traj-dot{fill:#f4d38b;opacity:0;transition:opacity .5s}.lit .traj-dot{opacity:1}.lit .td1{transition-delay:.5s}.lit .td2{transition-delay:1.3s}.lit .td3{transition-delay:2s}.lit .td4{transition-delay:2.7s}
+    .traj-pulse{fill:none;stroke:#e8742f;stroke-width:2;opacity:0}.lit .traj-pulse{animation:ringPulse 2.4s ease-out 2.9s infinite}
+    .traj-label{font:800 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;fill:rgba(245,246,242,.55)}.traj-label.hot{fill:#f4d38b}
+    .counter-wrap{position:absolute;left:26px;top:64px;text-align:left}.counter-wrap small{display:block;font:800 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}#counter{font-size:clamp(34px,4.6vw,62px);font-weight:800;letter-spacing:-.045em;color:#f4d38b;font-variant-numeric:tabular-nums}.counter-note{margin-top:6px;font-size:11px;color:var(--dim);font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    /* radar + steps */
+    .ops{display:grid;grid-template-columns:.9fr 1.1fr;gap:1px;background:rgba(245,246,242,.12);border:1px solid rgba(245,246,242,.12);border-top:0}
+    .radar-box{background:#06070c;padding:30px;display:grid;place-items:center}.radar{position:relative;width:min(64vw,300px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(111,143,255,.30);background:radial-gradient(circle,transparent 0 32%,rgba(111,143,255,.07) 32% 33%,transparent 33% 65%,rgba(111,143,255,.07) 65% 66%,transparent 66%),radial-gradient(circle at 50% 50%,rgba(47,108,255,.08),transparent 70%)}
+    .radar:before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(111,143,255,.45),rgba(111,143,255,.08) 18%,transparent 32%);animation:spin 4.2s linear infinite}
+    .radar:after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(111,143,255,.18);box-shadow:0 0 0 0;}
+    .radar .axis{position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(111,143,255,.18)}
+    .blip{position:absolute;width:7px;height:7px;border-radius:50%;background:#f4d38b;box-shadow:0 0 12px rgba(244,211,139,.8);animation:blipPing 4.2s ease-out infinite}
+    .b1{left:64%;top:30%}.b2{left:34%;top:58%;animation-delay:1.3s}.b3{left:56%;top:70%;animation-delay:2.5s;background:#e8742f;box-shadow:0 0 12px rgba(232,116,47,.8)}
+    .radar-tag{position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);white-space:nowrap;font:800 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+    .mission-side{background:#08090b;padding:30px}.step{padding:24px 0;border-bottom:1px solid rgba(245,246,242,.12)}.step:first-child{padding-top:0}.step:last-child{border:0}.step b{font-size:24px;letter-spacing:-.025em;font-weight:700}.step b em{font-style:normal;color:#f4d38b}.step p{color:var(--muted);line-height:1.6;margin:9px 0 0}
+    /* ============ TERMINAL ============ */
+    .terminal{border:1px solid var(--line);background:#02030a;box-shadow:0 32px 90px rgba(0,0,0,.38);overflow:hidden}.terminal-top{display:flex;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line);font:800 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);background:rgba(255,255,255,.05)}.terminal-top b{color:#4cff94;font-weight:800}
+    pre{margin:0;padding:26px;white-space:pre-wrap;font:700 clamp(13px,1.8vw,18px)/1.65 var(--mono);color:rgba(248,251,255,.82)}
+    pre .ln{display:block;opacity:0;transform:translateX(-6px)}.lit pre .ln{animation:lineIn .4s ease forwards;animation-delay:calc(var(--i)*.14s)}
+    .o{color:var(--orange)}.b{color:#61a2ff}.g{color:#4cff94}.y{color:var(--amber)}
+    .caret{display:inline-block;width:9px;height:16px;vertical-align:-2px;background:#4cff94;animation:caretBlink 1s steps(2) infinite}
+    /* ============ TOKEN / COIN ============ */
+    .token{display:grid;grid-template-columns:.9fr 1.1fr;gap:1px;background:rgba(245,246,242,.12);border:1px solid rgba(245,246,242,.12)}.coinbox,.specs{background:#090a0d;padding:30px;min-height:430px}
+    .coin-stage{height:100%;min-height:380px;display:grid;place-items:center;border:1px solid rgba(245,246,242,.14);background:radial-gradient(circle,rgba(216,168,74,.13),transparent 36%),#050608;perspective:1100px;position:relative;overflow:hidden}
+    .coin-stage .orbit{position:absolute;width:120%;aspect-ratio:1;border:1px dashed rgba(111,143,255,.14);border-radius:50%;animation:spin 40s linear infinite}
+    .coin3d{position:relative;width:min(62vw,290px);aspect-ratio:1;transform-style:preserve-3d;animation:coinspin 8s linear infinite}
+    .coin-stage:hover .coin3d{animation-play-state:paused}
+    .face{position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;backface-visibility:hidden;border:1px solid rgba(216,168,74,.55);background:radial-gradient(circle at 34% 28%,#20242c,#050608 72%);box-shadow:inset 0 0 50px rgba(216,168,74,.14),inset 0 1px rgba(255,255,255,.2)}
+    .face:before{content:"";position:absolute;inset:14px;border-radius:50%;border:1px solid rgba(216,168,74,.3)}
+    .face b{font-size:clamp(50px,8vw,92px);font-weight:800;letter-spacing:-.055em;color:#f4d38b;text-shadow:0 0 32px rgba(216,168,74,.35)}
+    .face.back{transform:rotateY(180deg)}.face.back b{font-size:clamp(20px,3vw,30px);letter-spacing:-.02em}.face.back small{position:absolute;bottom:22%;font:800 10px/1 var(--mono);letter-spacing:.2em;color:rgba(245,246,242,.5);text-transform:uppercase}
+    .spec{display:flex;justify-content:space-between;gap:18px;padding:17px 0;border-bottom:1px solid rgba(245,246,242,.12)}.spec span{font-size:12px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--dim)}.spec b{text-align:right;font-size:18px;font-weight:700}.spec:last-child{border:0}
+    /* ============ BUY ============ */
+    .buy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(245,246,242,.12);border:1px solid rgba(245,246,242,.12)}
+    .buy-step{background:#090a0d;padding:26px;min-height:270px;position:relative;overflow:hidden;transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .18s ease}
+    .buy-step:after{content:attr(data-n);position:absolute;right:6px;bottom:-26px;font-size:120px;font-weight:800;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px rgba(216,168,74,.22);pointer-events:none}
+    .buy-step .num{color:#f4d38b}.buy-step h3{margin:54px 0 12px;font-size:24px;line-height:1.1;letter-spacing:-.03em;font-weight:700}.buy-step p{margin:0;color:var(--muted);line-height:1.6;font-size:15px;position:relative;z-index:1}
+    .ca-panel{margin-top:1px;border:1px solid rgba(216,168,74,.30);background:linear-gradient(180deg,rgba(216,168,74,.06),rgba(5,6,8,.4));padding:26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}.ca-panel .ca-label{font:800 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#f4d38b}.ca-panel code{display:block;margin-top:10px;font:700 clamp(14px,2.4vw,20px)/1.35 var(--mono);color:rgba(245,246,242,.9);word-break:break-all}.ca-note{margin:10px 0 0;color:var(--dim);font-size:13px;line-height:1.5}
+    /* ============ GIANT MARQUEE / FOOTER ============ */
+    .giant{overflow:hidden;border-top:1px solid var(--line);background:#020308;padding:34px 0}
+    .giant div{display:flex;width:max-content;animation:marquee 46s linear infinite;white-space:nowrap;font-size:clamp(72px,12vw,170px);font-weight:800;letter-spacing:-.05em;line-height:1}
+    .giant span{padding-right:60px;color:transparent;-webkit-text-stroke:1px rgba(245,246,242,.22)}.giant span.hot{-webkit-text-stroke:1px rgba(216,168,74,.45)}
+    footer{padding:82px 22px;background:#010207;border-top:1px solid var(--line)}.foot{width:min(var(--max),100%);margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:34px}.disclaimer{color:var(--muted);line-height:1.7;margin:0}
+    .socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.socials a{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:1px solid rgba(245,246,242,.22);background:rgba(255,255,255,.04);font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;transition:.2s}.socials a:hover{background:#f5f6f2;color:#050608}
+    .copyright{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:28px;border-top:1px solid var(--line);color:var(--dim);font:800 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+    /* ============ MOTION ============ */
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.lit{opacity:1;transform:none}
+    .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,80px);z-index:90;padding:13px 20px;border:1px solid rgba(216,168,74,.5);background:rgba(5,6,8,.92);backdrop-filter:blur(14px);color:#f4d38b;font:800 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;transition:transform .35s ease;pointer-events:none}.toast.show{transform:translate(-50%,0)}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes pulse{50%{opacity:.25;transform:scale(.72)}}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+    @keyframes marqueeRev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+    @keyframes sheen{0%,55%{left:-70%}85%,100%{left:130%}}
+    @keyframes fuse{to{width:min(28vw,320px)}}
+    @keyframes riseIn{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+    @keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.12) translate(-1.5%,1.5%)}}
+    @keyframes scanY{from{top:-2px}to{top:100%}}
+    @keyframes flicker{0%,92%,96%,100%{opacity:1}94%{opacity:.55}}
+    @keyframes breathe{from{opacity:.7;transform:scale(1)}to{opacity:1;transform:scale(1.12)}}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.9}}
+    @keyframes ringPulse{0%{opacity:.9;r:6}100%{opacity:0;r:30}}
+    @keyframes lineIn{to{opacity:1;transform:none}}
+    @keyframes caretBlink{50%{opacity:0}}
+    @keyframes blipPing{0%,18%{transform:scale(1);opacity:1}28%{transform:scale(2.1);opacity:.25}38%,100%{transform:scale(1);opacity:.55}}
+    @keyframes coinspin{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+    @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation-duration:.01s !important;animation-iteration-count:1 !important;transition-duration:.01s !important}
+      .reveal{opacity:1;transform:none}#skyfield,#boot{display:none}
+      .eyebrow,.h1-fire,.h1-point,.sub,.cta,.ca-bar,.console-tilt{opacity:1;animation:none}
+      pre .ln{opacity:1;transform:none}.fp-path{stroke-dashoffset:0}.traj-path{stroke-dashoffset:0}.traj-dot,.traj-area{opacity:1}
+    }
+    @media (max-width:900px){
+      .hero-wrap,.head,.story,.token,.foot,.ops,.ca-panel{grid-template-columns:1fr}
+      .console{min-height:430px}.cards,.legend-grid{grid-template-columns:1fr}.art-grid{grid-template-columns:1fr}.buy-grid{grid-template-columns:1fr 1fr}
+      .links a:not(.ticker):not(.buy-link){display:none}
+      .story-item{grid-template-columns:1fr;gap:10px}.section{padding:76px 18px}.hero{padding-inline:18px}.nav{padding:12px}.nav-inner{width:calc(100vw - 24px)}
+      .hud-tl,.hud-tr{display:none}.counter-wrap{position:static;text-align:left;margin-top:18px}
+      .radar-box{padding-bottom:56px}
+    }
+    @media (max-width:520px){
+      .brand span{display:none}.links .ticker{display:none}.links .buy-link{padding:0 16px}
+      .cta{align-items:stretch}.btn{width:100%}h1{font-size:clamp(64px,21vw,104px)}.sub{font-size:18px}
+      .console{min-height:360px}.chip{padding:12px}.chip b{font-size:25px}.c3 b{font-size:35px}
+      .mission-side,.coinbox,.specs,pre,.traj-panel,.radar-box{padding:20px}
+      .spec{flex-direction:column;gap:6px}.spec b{text-align:left}.copyright{display:block}.copyright span{display:block;margin:10px 0}
+      .buy-grid{grid-template-columns:1fr}.buy-step{min-height:0}
+      .ca-bar{flex-direction:column;align-items:stretch}.ca-bar small{border-right:0;border-bottom:1px solid rgba(216,168,74,.22)}.ca-bar button{border-left:0;border-top:1px solid rgba(216,168,74,.22);padding:13px 16px}
+      .hud-bl,.hud-br{display:none}
+    }
   </style>
 </head>
 <body>
-  <div class="grid"></div><div class="noise"></div><div class="scan"></div>
-  <nav class="nav" aria-label="Primary navigation"><div class="nav-inner"><a class="brand" href="#top"><i class="mark"><img src="assets/brand/firepoint-mark.svg" alt=""></i><span>Firepoint</span></a><div class="links"><a href="#signal">Signal</a><a href="#story">Story</a><a href="#heroes">Heroes</a><a href="#arc">Arc</a><a href="#token">Token</a><a href="#disclaimer">Legal</a><a class="ticker" href="#token">$FIREPOINT</a></div></div></nav>
+  <div id="boot" aria-hidden="true"><div class="boot-inner"><div class="boot-logo"><img src="assets/brand/firepoint-mark.svg" alt="">FIRE<i>POINT</i></div><div id="bootline">INITIALIZING IGNITION SEQUENCE<span class="caret"></span></div><div class="boot-bar"><i></i></div></div></div>
+  <div class="noise"></div>
+  <nav class="nav" aria-label="Primary navigation"><div class="nav-inner"><a class="brand" href="#top"><i class="mark"><img src="assets/brand/firepoint-mark.svg" alt=""></i><span>Firepoint</span></a><div class="links"><a href="#signal">Signal</a><a href="#story">Story</a><a href="#heroes">Heroes</a><a href="#arc">Arc</a><a href="#token">Token</a><a href="https://x.com/firepointmeme" target="_blank" rel="noopener">X</a><a class="ticker" href="#token">$FIREPOINT</a><a class="buy-link" href="#buy">Buy</a></div></div></nav>
   <main id="top">
-    <section class="hero" aria-label="Firepoint hero"><div class="hero-wrap"><div><div class="eyebrow"><i class="dot"></i> positive-only / Ukrainian engineering inspired</div><h1><span class="h1-fire">Fire</span><span class="h1-point">Point</span></h1><p class="sub">A cinematic community meme built on <strong>precision</strong>, <strong>velocity</strong> and a clean ignition story: <strong>$2M spark → $6B myth arc</strong>. No baggage. No noise. Just the launch sequence.</p><div class="cta"><a class="btn btn-primary" href="#signal">Ignite the signal</a><a class="btn btn-ghost" href="#arc">See trajectory</a></div></div><div class="console" aria-label="Launch visual"><img class="console-art" src="assets/generated/web/firepoint-hero-command-room.jpg" alt="Abstract Firepoint command-room ignition visual"><div class="chip c1"><small>Origin</small><b>$2M</b></div><div class="chip c2"><small>Myth arc</small><b>$6B</b></div><div class="chip c3"><small>Status</small><b>Armed</b></div></div></div></section>
-    <div class="strip" aria-hidden="true"><div class="track"><span>Precision meme <i></i></span><span>Ukrainian engineering energy <i></i></span><span>Rocket-speed community <i></i></span><span>$2M spark <i></i></span><span>$6B ignition <i></i></span><span>Positive fire only <i></i></span><span>Precision meme <i></i></span><span>Ukrainian engineering energy <i></i></span><span>Rocket-speed community <i></i></span><span>$2M spark <i></i></span><span>$6B ignition <i></i></span><span>Positive fire only <i></i></span></div></div>
-    <section class="section" id="signal"><div class="container"><div class="head"><div><div class="kicker">01 / Signal</div><h2>Make it feel like a launch, not a flyer.</h2></div><p class="copy">The new direction borrows the confidence of aerospace and defense-tech branding without copying the real company: black command-room atmosphere, blue/orange ignition palette, Apple-clean typography, and shareable meme lines.</p></div><div class="cards"><article class="card"><div class="num">Signal 001</div><h3>Command-room visual</h3><p>Dark, cinematic, high-contrast. Less “template page”, more mission screen you want to screenshot.</p></article><article class="card"><div class="num">Signal 002</div><h3>Sharp ticker memory</h3><p>$FIREPOINT is repeated as a visual asset, not just a label. The name becomes the chant.</p></article><article class="card"><div class="num">Signal 003</div><h3>Clean public tone</h3><p>Positive Ukrainian engineering inspiration, no political claims, no affiliation confusion, no toxic copy.</p></article></div><div class="bluebar"></div></div></section>
-    <section class="section" id="story"><div class="container"><div class="head"><div><div class="kicker">02 / Story primer</div><h2>Why people instantly get the meme.</h2></div><p class="copy">A meme token needs lore people can repeat in ten seconds. Firepoint is framed as the community version of a public engineering myth: small-team energy, long-range ambition, and a name that literally means the moment ignition becomes self-sustaining.</p></div><div class="story"><article class="story-panel"><h3>The public inspiration</h3><p>Fire Point is publicly presented as a Ukrainian defense-tech company working on long-range precision systems and unmanned platforms, including FP-1 / FP-2 drones and the FP-5 “Flamingo” cruise missile.</p><p>That story gives the meme a visual language: aerospace, guidance systems, launch rooms, test data, blueprints, velocity and ignition.</p></article><article class="story-panel"><h3>The meme translation</h3><p>$FIREPOINT is not the company. It is a community meme built around the idea of finding the exact point where attention catches fire and keeps burning.</p><p>The simple community arc is: discover the spark, arm the narrative, launch the signal, keep the fire positive.</p></article></div><div class="story-list"><div class="story-item"><b>Fire point</b><span>In chemistry, the fire point is the temperature where a flame keeps burning after ignition. For the meme, it means the moment a community becomes self-sustaining.</span></div><div class="story-item"><b>Flamingo arc</b><span>A bright, improbable symbol: elegance plus range. Perfect meme energy — unusual, memorable, and built for distance.</span></div><div class="story-item"><b>$2M → $6B</b><span>A mythic shorthand, not a promise: the kind of impossible-looking trajectory that crypto communities understand immediately.</span></div></div><div class="art-grid"><figure class="art-card"><img src="assets/generated/web/firepoint-flamingo-lore.jpg" alt="Abstract flamingo-inspired Firepoint lore visual"><figcaption class="art-caption"><b>Flamingo lore</b><span>A surreal, non-literal visual language for the myth: elegant, fast, bright, and impossible to ignore.</span></figcaption></figure><figure class="art-card"><img src="assets/generated/web/firepoint-lore-characters.jpg" alt="Abstract Firepoint hero archetypes: builder, operator and systems"><figcaption class="art-caption"><b>Main archetypes</b><span>Builder, operator, systems — three roles visitors can remember and communities can remix.</span></figcaption></figure></div><p class="source-note">Educational reference only: based on publicly visible materials from firepoint.agency. $FIREPOINT is independent and unaffiliated.</p></div></section>
-    <section class="section" id="heroes"><div class="container"><div class="head"><div><div class="kicker">03 / Main characters</div><h2>The cast behind the lore.</h2></div><p class="copy">Instead of a flat “about” page, the site now gives visitors memorable characters and roles. They are presented as public inspiration references, not endorsements or token participants.</p></div><div class="legend-grid"><article class="legend"><strong>PUBLIC FIGURE / BUILDER</strong><h3>Denys Shtilerman</h3><p>Co-owner and chief constructor in the public Fire Point story. For the meme: the builder archetype — make the thing, test the thing, scale the thing.</p></article><article class="legend"><strong>PUBLIC FIGURE / OPERATOR</strong><h3>Yegor Skaliga</h3><p>Co-owner and director in the public Fire Point story. For the meme: the production archetype — move from idea to output, from prototype to mass attention.</p></article><article class="legend"><strong>PUBLIC FIGURE / SYSTEMS</strong><h3>Iryna Terekh</h3><p>Technical director in the public Fire Point story. For the meme: the systems archetype — open-source mindset, practical solutions, guidance and precision.</p></article></div><div class="cards" style="margin-top:1px"><article class="card"><div class="num">Asset 001</div><h3>FP-1 / FP-2</h3><p>Drone-platform references that give the meme its “mission hardware” vocabulary: distance, guidance, payload, repeatability.</p></article><article class="card"><div class="num">Asset 002</div><h3>FP-5 Flamingo</h3><p>The most memeable symbol: an unexpected name attached to long-range ambition. Weird enough to spread, serious enough to look premium.</p></article><article class="card"><div class="num">Asset 003</div><h3>FP-7 / FP-9</h3><p>Future-facing names that help the brand feel like a universe, not one joke. More numbers, more lore, more room for community content.</p></article></div></div></section>
-    <section class="section" id="arc"><div class="container"><div class="head"><div><div class="kicker">04 / Growth arc</div><h2>Spark to ignition.</h2></div><p class="copy">The strongest meme websites explain themselves in one breath. Firepoint’s breath is simple: precision brand, rocket energy, community acceleration.</p></div><div class="mission"><div class="mission-main"><h3>$2M spark. $6B ignition.</h3><p>Not a forecast. Not advice. A mythic trajectory that is easy to repeat, remix and post: find the fire point.</p></div><div class="mission-side"><div class="step"><b>01 — Prime</b><p>Establish the visual code: blue systems, orange ignition, industrial typography.</p></div><div class="step"><b>02 — Arm</b><p>Give the community one clean story and one ticker to rally around.</p></div><div class="step"><b>03 — Launch</b><p>Turn the page into a shareable artifact: bold, fast, premium, meme-native.</p></div></div></div></div></section>
-    <section class="section"><div class="container"><div class="terminal"><div class="terminal-top"><span>FIREPOINT://MISSION-CONSOLE</span><span>ONLINE</span></div><pre><span class="b">› load brand system</span>
-  palette:       agency-inspired blue / orange / amber
-  surface:       cinematic black
-  typography:    hard uppercase / mono telemetry
-
-<span class="o">› arm meme narrative</span>
-  ticker:        $FIREPOINT
-  story:         $2M spark → $6B ignition
-  vibe:          premium, positive, raid-ready
-
-<span class="g">✓ launch constraints</span>
-  affiliation:   none
-  claims:        disabled
-  financial_advice: false
-  fire:          maximum</pre></div></div></section>
-    <section class="section" id="token"><div class="container"><div class="head"><div><div class="kicker">05 / Token shell</div><h2>One ticker. One ignition point.</h2></div><p class="copy">Keep the mechanics lightweight and the identity heavy. The site should sell the feeling before the details are final.</p></div><div class="token"><div class="coinbox"><div class="coin"><span>FP</span></div></div><div class="specs"><div class="spec"><span>Name</span><b>Firepoint</b></div><div class="spec"><span>Ticker</span><b>$FIREPOINT</b></div><div class="spec"><span>Chain</span><b>Solana / pump.fun direction</b></div><div class="spec"><span>Supply</span><b>1,000,000,000 draft</b></div><div class="spec"><span>Tax</span><b>0 / 0 preferred</b></div><div class="spec"><span>Core line</span><b>$2M spark → $6B ignition</b></div><div class="spec"><span>Tone</span><b>Positive fire only</b></div></div></div></div></section>
+    <section class="hero" aria-label="Firepoint hero">
+      <canvas id="skyfield" aria-hidden="true"></canvas>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hud hud-tl">FIREPOINT://LIVE<br><b>SIGNAL ACQUIRED</b></div>
+      <div class="hud hud-tr"><span id="utc">--:--:-- UTC</span><br><b>LAUNCH WINDOW OPEN</b></div>
+      <div class="hud hud-bl">GUIDANCE: POSITIVE-ONLY<br>AFFILIATION: NONE</div>
+      <div class="hud hud-br">ARC: $2M → $6B<br><b>MYTH MODE</b></div>
+      <div class="hero-wrap">
+        <div>
+          <div class="eyebrow"><i class="dot"></i> launch window open / positive fire only</div>
+          <h1><span class="h1-fire">Fire</span><span class="h1-point">Point</span></h1>
+          <p class="sub">The moment a spark becomes <strong>self-sustaining</strong> — that is the fire point. A cinematic community meme on Solana built on <strong>precision</strong>, <strong>velocity</strong> and one clean line: <strong>$2M spark → $6B myth arc</strong>.</p>
+          <div class="cta"><a class="btn btn-fire" href="#buy">Buy $FIREPOINT</a><a class="btn btn-ghost" href="https://x.com/firepointmeme" target="_blank" rel="noopener">Follow the signal</a></div>
+          <div class="ca-bar"><small>Contract</small><code id="ca-hero">TBA — drops at launch</code><button type="button" data-copy>Copy</button></div>
+        </div>
+        <div class="console-tilt" id="hero-art">
+          <div class="console" aria-label="Launch visual">
+            <img class="console-art" src="assets/generated/web/firepoint-hero-command-room.jpg" alt="Abstract Firepoint command-room ignition visual">
+            <div class="scanline"></div>
+            <svg class="reticle" viewBox="0 0 200 200" aria-hidden="true">
+              <g class="r-spin"><circle cx="100" cy="100" r="92" fill="none" stroke="rgba(111,143,255,.35)" stroke-width="1" stroke-dasharray="3 9"/></g>
+              <g class="r-spin2"><circle cx="100" cy="100" r="70" fill="none" stroke="rgba(244,211,139,.4)" stroke-width="1" stroke-dasharray="22 14"/></g>
+              <circle cx="100" cy="100" r="46" fill="none" stroke="rgba(245,246,242,.18)" stroke-width="1"/>
+              <line x1="100" y1="2" x2="100" y2="34" stroke="rgba(244,211,139,.5)" stroke-width="1"/><line x1="100" y1="166" x2="100" y2="198" stroke="rgba(244,211,139,.5)" stroke-width="1"/>
+              <line x1="2" y1="100" x2="34" y2="100" stroke="rgba(244,211,139,.5)" stroke-width="1"/><line x1="166" y1="100" x2="198" y2="100" stroke="rgba(244,211,139,.5)" stroke-width="1"/>
+            </svg>
+            <div class="chip c1"><small>Origin</small><b>$2M</b></div>
+            <div class="chip c2"><small>Myth arc</small><b>$6B</b></div>
+            <div class="chip c3"><small>Status</small><b>Armed</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="strip" aria-hidden="true"><div class="track"><span>Precision meme <i></i></span><span>Engineering energy <i></i></span><span>Rocket-speed community <i></i></span><span>$2M spark <i></i></span><span>$6B ignition <i></i></span><span>Positive fire only <i></i></span><span>Precision meme <i></i></span><span>Engineering energy <i></i></span><span>Rocket-speed community <i></i></span><span>$2M spark <i></i></span><span>$6B ignition <i></i></span><span>Positive fire only <i></i></span></div></div>
+    <div class="strip" aria-hidden="true"><div class="track rev"><span>Find the fire point <i></i></span><span>$FIREPOINT <i></i></span><span>Command-room black <i></i></span><span>Blue systems / orange ignition <i></i></span><span>Solana rails <i></i></span><span>Myth mode <i></i></span><span>Find the fire point <i></i></span><span>$FIREPOINT <i></i></span><span>Command-room black <i></i></span><span>Blue systems / orange ignition <i></i></span><span>Solana rails <i></i></span><span>Myth mode <i></i></span></div></div>
+    <section class="section" id="signal"><div class="container"><div class="head reveal"><div><div class="kicker">01 / Signal</div><h2>This is a launch, not a flyer.</h2></div><p class="copy">Command-room black. Blue systems, orange ignition, amber telemetry. A meme page that feels like a mission screen — built to be screenshotted, quoted and raided with positive fire only.</p></div><div class="cards reveal"><article class="card tilt"><div class="num">Signal 001</div><h3>Command-room visual</h3><p>Dark, cinematic, high-contrast. Less “template page”, more mission screen you want to screenshot.</p></article><article class="card tilt"><div class="num">Signal 002</div><h3>Sharp ticker memory</h3><p>$FIREPOINT is repeated as a visual asset, not just a label. The name becomes the chant.</p></article><article class="card tilt"><div class="num">Signal 003</div><h3>Clean public tone</h3><p>Positive engineering inspiration, no political claims, no affiliation confusion, no toxic copy.</p></article></div><div class="bluebar"></div></div></section>
+    <section class="section" id="story"><div class="container"><div class="head reveal"><div><div class="kicker">02 / Story primer</div><h2>Why people instantly get the meme.</h2></div><p class="copy">A meme token needs lore people can repeat in ten seconds. Firepoint is framed as the community version of a public engineering myth: small-team energy, long-range ambition, and a name that literally means the moment ignition becomes self-sustaining.</p></div><div class="story reveal"><article class="story-panel"><h3>The public inspiration</h3><p>Fire Point is publicly presented as a Ukrainian defense-tech company working on long-range precision systems and unmanned platforms, including FP-1 / FP-2 drones and the FP-5 “Flamingo” cruise missile.</p><p>That story gives the meme a visual language: aerospace, guidance systems, launch rooms, test data, blueprints, velocity and ignition.</p></article><article class="story-panel"><h3>The meme translation</h3><p>$FIREPOINT is not the company. It is a community meme built around the idea of finding the exact point where attention catches fire and keeps burning.</p><p>The simple community arc is: discover the spark, arm the narrative, launch the signal, keep the fire positive.</p></article></div><div class="story-list reveal"><div class="story-item"><b>Fire point</b><span>In chemistry, the fire point is the temperature where a flame keeps burning after ignition. For the meme, it means the moment a community becomes self-sustaining.</span></div><div class="story-item"><b>Flamingo arc</b><span>A bright, improbable symbol: elegance plus range. Perfect meme energy — unusual, memorable, and built for distance.</span></div><div class="story-item"><b>$2M → $6B</b><span>A mythic shorthand, not a promise: the kind of impossible-looking trajectory that crypto communities understand immediately.</span></div></div>
+    <div class="art-grid reveal">
+      <figure class="art-card"><img src="assets/generated/web/firepoint-flamingo-lore.jpg" alt="Abstract flamingo-inspired Firepoint lore visual"><div class="art-scan"></div><i class="corner tl"></i><i class="corner br"></i><figcaption class="art-caption"><b>Flamingo lore</b><span>A surreal, non-literal visual language for the myth: elegant, fast, bright.</span></figcaption></figure>
+      <figure class="art-card vector-card"><svg viewBox="0 0 400 400" aria-label="FP-5 flamingo vector blueprint">
+        <line class="fp-path blue" x1="30" y1="330" x2="370" y2="330" pathLength="1"/>
+        <polygon class="fp-path" points="120,255 200,215 280,255 200,302" pathLength="1"/>
+        <polygon class="fp-path d2" points="160,242 252,242 206,176" pathLength="1"/>
+        <polyline class="fp-path d2" points="278,250 306,196 288,146 316,112" pathLength="1"/>
+        <polygon class="fp-path d3" points="316,112 348,120 330,132" pathLength="1"/>
+        <line class="fp-path orange d3" x1="348" y1="120" x2="376" y2="128" pathLength="1"/>
+        <polyline class="fp-path d3" points="182,298 176,330" pathLength="1"/>
+        <polyline class="fp-path d3" points="216,300 224,330" pathLength="1"/>
+        <polyline class="fp-path orange d4" points="120,255 84,270 106,242" pathLength="1"/>
+        <circle class="fp-star" cx="92" cy="120" r="2"/><circle class="fp-star" cx="140" cy="86" r="1.6" style="animation-delay:.8s"/><circle class="fp-star" cx="330" cy="64" r="2" style="animation-delay:1.4s"/><circle class="fp-star" cx="60" cy="190" r="1.5" style="animation-delay:2s"/>
+        <text x="30" y="356" class="traj-label">FP-5 // VECTOR-BLUEPRINT</text><text x="370" y="356" text-anchor="end" class="traj-label hot">RANGE: MYTH</text>
+      </svg><figcaption class="art-caption"><b>FP-5 vector</b><span>Origami guidance: the flamingo drawn as a blueprint, line by line.</span></figcaption></figure>
+      <figure class="art-card"><img src="assets/generated/web/firepoint-lore-characters.jpg" alt="Abstract Firepoint hero archetypes: builder, operator and systems"><div class="art-scan" style="animation-delay:2.4s"></div><i class="corner tl"></i><i class="corner br"></i><figcaption class="art-caption"><b>Main archetypes</b><span>Builder, operator, systems — roles communities can remix.</span></figcaption></figure>
+    </div>
+    <p class="source-note">Educational reference only: based on publicly visible materials from firepoint.agency. $FIREPOINT is independent and unaffiliated.</p></div></section>
+    <section class="section" id="heroes"><div class="container"><div class="head reveal"><div><div class="kicker">03 / Main characters</div><h2>The cast behind the lore.</h2></div><p class="copy">Instead of a flat “about” page, the site gives visitors memorable characters and roles. They are presented as public inspiration references, not endorsements or token participants.</p></div><div class="legend-grid reveal"><article class="legend tilt"><strong>PUBLIC FIGURE / BUILDER</strong><h3>Denys Shtilerman</h3><p>Co-owner and chief constructor in the public Fire Point story. For the meme: the builder archetype — make the thing, test the thing, scale the thing.</p></article><article class="legend tilt"><strong>PUBLIC FIGURE / OPERATOR</strong><h3>Yegor Skaliga</h3><p>Co-owner and director in the public Fire Point story. For the meme: the production archetype — move from idea to output, from prototype to mass attention.</p></article><article class="legend tilt"><strong>PUBLIC FIGURE / SYSTEMS</strong><h3>Iryna Terekh</h3><p>Technical director in the public Fire Point story. For the meme: the systems archetype — open-source mindset, practical solutions, guidance and precision.</p></article></div><div class="cards reveal" style="margin-top:1px"><article class="card tilt"><div class="num">Asset 001</div><h3>FP-1 / FP-2</h3><p>Drone-platform references that give the meme its “mission hardware” vocabulary: distance, guidance, payload, repeatability.</p></article><article class="card tilt"><div class="num">Asset 002</div><h3>FP-5 Flamingo</h3><p>The most memeable symbol: an unexpected name attached to long-range ambition. Weird enough to spread, serious enough to look premium.</p></article><article class="card tilt"><div class="num">Asset 003</div><h3>FP-7 / FP-9</h3><p>Future-facing names that help the brand feel like a universe, not one joke. More numbers, more lore, more room for community content.</p></article></div></div></section>
+    <section class="section" id="arc"><div class="container"><div class="head reveal"><div><div class="kicker">04 / Growth arc</div><h2>Spark to ignition.</h2></div><p class="copy">The strongest meme websites explain themselves in one breath. Firepoint’s breath is simple: precision brand, rocket energy, community acceleration.</p></div>
+      <div class="traj-panel reveal" id="traj">
+        <div class="panel-top"><span>FIREPOINT://TRAJECTORY</span><b>MYTH TELEMETRY</b></div>
+        <div class="counter-wrap"><small>Myth arc telemetry</small><div id="counter">$2,000,000</div><div class="counter-note">narrative, not a forecast</div></div>
+        <svg class="traj-svg" viewBox="0 0 1000 430" aria-label="Mythic trajectory from 2 million spark to 6 billion ignition">
+          <defs>
+            <linearGradient id="trajgrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2f6cff"/><stop offset=".55" stop-color="#d8a84a"/><stop offset="1" stop-color="#e8742f"/></linearGradient>
+            <linearGradient id="trajfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(216,168,74,.22)"/><stop offset="1" stop-color="rgba(216,168,74,0)"/></linearGradient>
+          </defs>
+          <g class="traj-grid">
+            <line x1="0" y1="90" x2="1000" y2="90"/><line x1="0" y1="170" x2="1000" y2="170"/><line x1="0" y1="250" x2="1000" y2="250"/><line x1="0" y1="330" x2="1000" y2="330"/>
+            <line x1="200" y1="0" x2="200" y2="400"/><line x1="400" y1="0" x2="400" y2="400"/><line x1="600" y1="0" x2="600" y2="400"/><line x1="800" y1="0" x2="800" y2="400"/>
+          </g>
+          <path class="traj-area" d="M 50,375 C 320,362 520,330 680,225 C 790,152 880,84 950,52 L 950,400 L 50,400 Z"/>
+          <path class="traj-path" d="M 50,375 C 320,362 520,330 680,225 C 790,152 880,84 950,52" pathLength="1" stroke-dasharray="1" />
+          <circle class="traj-dot td1" cx="50" cy="375" r="6"/>
+          <circle class="traj-dot td2" cx="500" cy="330" r="5"/>
+          <circle class="traj-dot td3" cx="680" cy="225" r="5"/>
+          <circle class="traj-dot td4" cx="950" cy="52" r="7"/>
+          <circle class="traj-pulse" cx="950" cy="52" r="7"/>
+          <text x="50" y="403" class="traj-label hot">$2M SPARK</text>
+          <text x="500" y="358" text-anchor="middle" class="traj-label">SIGNAL</text>
+          <text x="680" y="200" text-anchor="middle" class="traj-label">IGNITION</text>
+          <text x="940" y="36" text-anchor="end" class="traj-label hot">$6B MYTH</text>
+        </svg>
+      </div>
+      <div class="ops reveal">
+        <div class="radar-box"><div class="radar"><div class="axis"></div><i class="blip b1"></i><i class="blip b2"></i><i class="blip b3"></i><span class="radar-tag">ATTENTION RADAR // SWEEPING</span></div></div>
+        <div class="mission-side"><div class="step"><b><em>01</em> — Prime</b><p>Establish the visual code: blue systems, orange ignition, industrial typography.</p></div><div class="step"><b><em>02</em> — Arm</b><p>Give the community one clean story and one ticker to rally around.</p></div><div class="step"><b><em>03</em> — Launch</b><p>Turn the page into a shareable artifact: bold, fast, premium, meme-native.</p></div><div class="step"><b><em>04</em> — Sustain</b><p>Keep the fire positive. The fire point is the moment it burns on its own.</p></div></div>
+      </div>
+    </div></section>
+    <section class="section"><div class="container reveal"><div class="terminal"><div class="terminal-top"><span>FIREPOINT://MISSION-CONSOLE</span><b>● ONLINE</b></div><pre><span class="ln" style="--i:0"><span class="b">› load brand system</span></span><span class="ln" style="--i:1">  palette:       agency-inspired blue / orange / amber</span><span class="ln" style="--i:2">  surface:       cinematic black</span><span class="ln" style="--i:3">  typography:    hard uppercase / mono telemetry</span><span class="ln" style="--i:4"> </span><span class="ln" style="--i:5"><span class="o">› arm meme narrative</span></span><span class="ln" style="--i:6">  ticker:        $FIREPOINT</span><span class="ln" style="--i:7">  story:         $2M spark → $6B ignition</span><span class="ln" style="--i:8">  vibe:          premium, positive, raid-ready</span><span class="ln" style="--i:9"> </span><span class="ln" style="--i:10"><span class="y">› launch sequence</span></span><span class="ln" style="--i:11">  chain:         solana</span><span class="ln" style="--i:12">  pad:           pump.fun</span><span class="ln" style="--i:13">  contract:      TBA — posted at launch on @firepointmeme</span><span class="ln" style="--i:14"> </span><span class="ln" style="--i:15"><span class="g">✓ launch constraints</span></span><span class="ln" style="--i:16">  affiliation:   none</span><span class="ln" style="--i:17">  claims:        disabled</span><span class="ln" style="--i:18">  financial_advice: false</span><span class="ln" style="--i:19">  fire:          maximum<span class="caret"></span></span></pre></div></div></section>
+    <section class="section" id="token"><div class="container"><div class="head reveal"><div><div class="kicker">05 / Token shell</div><h2>One ticker. One ignition point.</h2></div><p class="copy">Lightweight mechanics, heavy identity. Fair launch on pump.fun: no presale, no team allocation games, no taxes — just the ticker and the fire.</p></div><div class="token reveal"><div class="coinbox"><div class="coin-stage"><i class="orbit"></i><div class="coin3d"><div class="face"><b>FP</b></div><div class="face back"><b>$2M → $6B</b><small>find the fire point</small></div></div></div></div><div class="specs"><div class="spec"><span>Name</span><b>Firepoint</b></div><div class="spec"><span>Ticker</span><b>$FIREPOINT</b></div><div class="spec"><span>Chain</span><b>Solana — launching on pump.fun</b></div><div class="spec"><span>Supply</span><b>1,000,000,000</b></div><div class="spec"><span>Tax</span><b>0 / 0</b></div><div class="spec"><span>Contract</span><b id="ca-spec">TBA at launch</b></div><div class="spec"><span>Core line</span><b>$2M spark → $6B ignition</b></div><div class="spec"><span>Tone</span><b>Positive fire only</b></div></div></div></div></section>
+    <section class="section" id="buy"><div class="container"><div class="head reveal"><div><div class="kicker">06 / Launch pad</div><h2>How to catch the fire.</h2></div><p class="copy">Four steps, one ticker. The contract address will be posted here and on <a href="https://x.com/firepointmeme" target="_blank" rel="noopener" style="color:#f4d38b">@firepointmeme</a> at launch — trust only those two sources. Anything else is not us.</p></div><div class="buy-grid reveal"><article class="buy-step tilt" data-n="01"><div class="num">Step 01</div><h3>Get a wallet</h3><p>Install a Solana wallet such as Phantom or Solflare on mobile or as a browser extension.</p></article><article class="buy-step tilt" data-n="02"><div class="num">Step 02</div><h3>Load SOL</h3><p>Buy SOL on an exchange and send it to your wallet — it is the fuel for the ignition.</p></article><article class="buy-step tilt" data-n="03"><div class="num">Step 03</div><h3>Find the fire point</h3><p>Open pump.fun, paste the official contract address, and swap SOL for $FIREPOINT.</p></article><article class="buy-step tilt" data-n="04"><div class="num">Step 04</div><h3>Hold the signal</h3><p>Join the raid room on X, keep the fire positive, and help the spark become self-sustaining.</p></article></div><div class="ca-panel reveal"><div><div class="ca-label">Official contract address</div><code id="ca-main">TBA — announced at launch</code><p class="ca-note">Verify the address against this page and @firepointmeme before any swap. We will never DM you a contract.</p></div><div class="cta" style="margin:0;opacity:1;animation:none"><button class="btn btn-fire" type="button" id="pump-btn">Buy on pump.fun</button><button class="btn btn-ghost" type="button" data-copy>Copy CA</button></div></div></div></section>
+    <div class="giant" aria-hidden="true"><div><span>FIND THE FIRE POINT</span><span class="hot">$FIREPOINT</span><span>FIND THE FIRE POINT</span><span class="hot">$FIREPOINT</span></div></div>
   </main>
-  <footer id="disclaimer"><div class="foot"><div><div class="kicker">Disclaimer</div><h2>Find the fire point.</h2></div><p class="disclaimer">Firepoint / $FIREPOINT is an independent community meme concept inspired by publicly visible Ukrainian engineering and defense-tech aesthetics. It is not affiliated with, endorsed by, sponsored by, or connected to any real-world company, organization, founder, employee, investor or government entity. Nothing on this page is financial advice, an investment promise, fundraising material, or a claim of utility.</p><div class="copyright"><span>© Firepoint community concept</span><span>Positive fire only / $2M → $6B myth arc</span></div></div></footer>
+  <footer id="disclaimer"><div class="foot"><div><div class="kicker">Disclaimer</div><h2>Find the fire point.</h2><div class="socials"><a href="https://x.com/firepointmeme" target="_blank" rel="noopener">X / @firepointmeme</a><a href="#buy">pump.fun — at launch</a></div></div><p class="disclaimer">Firepoint / $FIREPOINT is an independent community meme concept inspired by publicly visible Ukrainian engineering and defense-tech aesthetics. It is not affiliated with, endorsed by, sponsored by, or connected to any real-world company, organization, founder, employee, investor or government entity. Nothing on this page is financial advice, an investment promise, fundraising material, or a claim of utility. The “$2M spark → $6B myth arc” is a meme narrative, not a forecast. Digital assets are volatile — never risk what you cannot afford to lose.</p><div class="copyright"><span>© Firepoint community concept</span><span>Positive fire only / $2M → $6B myth arc</span></div></div></footer>
+  <div class="toast" id="toast" role="status">Copied</div>
+  <script>
+    // ===== Launch config: set the contract address + pump.fun URL here at launch =====
+    var CA = "";            // e.g. "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin"
+    var PUMP_URL = "";      // e.g. "https://pump.fun/coin/<address>"
+    // =================================================================================
+    (function(){
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      /* ---- boot sequence ---- */
+      var boot = document.getElementById('boot');
+      if(reduced || sessionStorage.getItem('fpboot')){ boot.classList.add('off'); }
+      else{
+        sessionStorage.setItem('fpboot','1');
+        var lines = ['INITIALIZING IGNITION SEQUENCE','CALIBRATING GUIDANCE — POSITIVE ONLY','ARMING NARRATIVE: $2M → $6B','<b>FIRE POINT REACHED</b>'];
+        var bl = document.getElementById('bootline'), li = 0;
+        var bt = setInterval(function(){
+          li++;
+          if(li < lines.length){ bl.innerHTML = lines[li] + '<span class="caret"></span>'; }
+          else{ clearInterval(bt); boot.classList.add('done'); setTimeout(function(){ boot.classList.add('off'); }, 700); }
+        }, 420);
+      }
+      /* ---- UTC clock ---- */
+      var utc = document.getElementById('utc');
+      function tickClock(){ var d = new Date(); utc.textContent = String(d.getUTCHours()).padStart(2,'0')+':'+String(d.getUTCMinutes()).padStart(2,'0')+':'+String(d.getUTCSeconds()).padStart(2,'0')+' UTC'; }
+      tickClock(); setInterval(tickClock, 1000);
+      /* ---- CA config ---- */
+      var tba = !CA;
+      var heroCa = document.getElementById('ca-hero'), mainCa = document.getElementById('ca-main'), specCa = document.getElementById('ca-spec');
+      if(!tba){ heroCa.textContent = CA; mainCa.textContent = CA; specCa.textContent = CA.slice(0,6)+'…'+CA.slice(-6); }
+      var toast = document.getElementById('toast');
+      function showToast(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(showToast.t); showToast.t = setTimeout(function(){ toast.classList.remove('show'); }, 1900); }
+      document.querySelectorAll('[data-copy]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(tba){ showToast('CA drops at launch — follow @firepointmeme'); return; }
+          (navigator.clipboard ? navigator.clipboard.writeText(CA) : Promise.reject()).then(function(){ showToast('Contract copied'); }).catch(function(){ showToast(CA); });
+        });
+      });
+      document.getElementById('pump-btn').addEventListener('click', function(){
+        if(PUMP_URL){ window.open(PUMP_URL, '_blank', 'noopener'); } else { showToast('Launching soon on pump.fun'); }
+      });
+      /* ---- scroll reveal ---- */
+      var counterDone = false;
+      function runCounter(){
+        if(counterDone) return; counterDone = true;
+        var el = document.getElementById('counter'), from = 2e6, to = 6e9, t0 = null, dur = 2600;
+        function frame(ts){
+          if(!t0) t0 = ts;
+          var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 4);
+          el.textContent = '$' + Math.round(from + (to - from) * e).toLocaleString('en-US');
+          if(p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+      if('IntersectionObserver' in window && !reduced){
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){
+              e.target.classList.add('lit');
+              if(e.target.id === 'traj') runCounter();
+              io.unobserve(e.target);
+            }
+          });
+        }, {threshold:.14});
+        document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('lit'); });
+        document.getElementById('counter').textContent = '$6,000,000,000';
+      }
+      /* ---- tilt + spotlight (desktop pointers only) ---- */
+      if(window.matchMedia('(pointer: fine)').matches && !reduced){
+        document.querySelectorAll('.tilt').forEach(function(el){
+          el.addEventListener('mousemove', function(ev){
+            var r = el.getBoundingClientRect(), x = (ev.clientX - r.left) / r.width, y = (ev.clientY - r.top) / r.height;
+            el.style.setProperty('--ry', ((x - .5) * 7).toFixed(2) + 'deg');
+            el.style.setProperty('--rx', ((.5 - y) * 7).toFixed(2) + 'deg');
+            el.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
+            el.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+          });
+          el.addEventListener('mouseleave', function(){ el.style.setProperty('--rx','0deg'); el.style.setProperty('--ry','0deg'); });
+        });
+        /* hero art parallax */
+        var art = document.getElementById('hero-art'), hero = document.querySelector('.hero');
+        hero.addEventListener('mousemove', function(ev){
+          var w = hero.offsetWidth, h = hero.offsetHeight;
+          var dx = (ev.clientX / w - .5), dy = (ev.clientY / h - .5);
+          art.style.transform = 'translate(' + (dx * -14).toFixed(1) + 'px,' + (dy * -10).toFixed(1) + 'px)';
+        });
+        hero.addEventListener('mouseleave', function(){ art.style.transform = ''; });
+      }
+      /* ---- skyfield: stars + embers ---- */
+      var cv = document.getElementById('skyfield');
+      if(cv && cv.getContext && !reduced){
+        var ctx = cv.getContext('2d'), W, H, stars = [], embers = [];
+        function size(){ W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight; }
+        size(); window.addEventListener('resize', size);
+        var NS = Math.min(110, Math.floor(W / 14)), NE = Math.min(60, Math.floor(W / 22));
+        for(var i = 0; i < NS; i++){ stars.push({x:Math.random()*W, y:Math.random()*H*.9, r:Math.random()*1.1+.3, p:Math.random()*6.28, s:.5+Math.random()*1.2}); }
+        function spawnEmber(any){ return {x:Math.random()*W, y:any?Math.random()*H:H+8, r:.6+Math.random()*1.9, vy:.25+Math.random()*.85, vx:(Math.random()-.5)*.3, a:.15+Math.random()*.5, hot:Math.random()<.35}; }
+        for(var j = 0; j < NE; j++){ embers.push(spawnEmber(true)); }
+        var t = 0;
+        (function tick(){
+          t += .016; ctx.clearRect(0,0,W,H);
+          for(var i = 0; i < stars.length; i++){
+            var s = stars[i], tw = .25 + .45 * Math.abs(Math.sin(t * s.s + s.p));
+            ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.2832); ctx.fillStyle = 'rgba(159,180,255,' + tw + ')'; ctx.fill();
+          }
+          for(var k = 0; k < embers.length; k++){
+            var p = embers[k];
+            p.y -= p.vy; p.x += p.vx + Math.sin(p.y * .012) * .18;
+            if(p.y < -10 || p.x < -10 || p.x > W + 10){ embers[k] = spawnEmber(); continue; }
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+            ctx.fillStyle = p.hot ? 'rgba(216,97,35,' + p.a + ')' : 'rgba(216,168,74,' + p.a + ')';
+            ctx.fill();
+          }
+          requestAnimationFrame(tick);
+        })();
+      }
+    })();
+  </script>
 </body>
 </html>
