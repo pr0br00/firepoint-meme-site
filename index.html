@@ -136,14 +136,24 @@ h2{font-size:clamp(30px,5vw,54px);font-weight:850;letter-spacing:-.01em;line-hei
 
 /* ---------- card stack (story) ---------- */
 .stack-zone{position:relative}
-.stack-card{position:sticky;top:12vh;min-height:64vh;border-radius:18px;border:1px solid var(--line);padding:clamp(28px,5vw,64px);display:flex;flex-direction:column;justify-content:center;margin-bottom:6vh;overflow:hidden}
-.stack-card h3{font-size:clamp(24px,3.6vw,40px);text-transform:uppercase;margin-bottom:16px}
-.stack-card p{color:var(--dim);font-size:16px;line-height:1.7;max-width:560px}
-.stack-card .tagno{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--green-soft);margin-bottom:18px}
-.sc1{background:linear-gradient(135deg,#0b120d,#0a100c 60%)}
-.sc2{background:linear-gradient(135deg,#101408,#0a100c 60%)}
-.sc3{background:linear-gradient(135deg,#140e07,#100b06 60%)}
-.sc3 .tagno{color:var(--amber)}
+.stack-card{position:sticky;top:14vh;min-height:52vh;border-radius:18px;padding:clamp(30px,5vw,60px);display:flex;flex-direction:column;justify-content:center;margin-bottom:7vh;overflow:hidden}
+.stack-card h3{font-size:clamp(26px,3.8vw,44px);text-transform:uppercase;margin-bottom:18px;line-height:1.05;position:relative;z-index:2}
+.stack-card p{color:#c2d2c6;font-size:16.5px;line-height:1.75;max-width:580px;position:relative;z-index:2}
+.stack-card .tagno{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:20px;position:relative;z-index:2;display:inline-flex;align-items:center;gap:10px}
+.stack-card .tagno::before{content:"";width:26px;height:1px;background:currentColor}
+.stack-card .bigno{position:absolute;right:-10px;bottom:-42px;font-family:var(--mono);font-weight:800;font-size:clamp(160px,26vw,320px);line-height:1;z-index:1;user-select:none}
+.sc1{background:linear-gradient(135deg,#0e1a12,#0a120d 65%);border:1px solid rgba(0,200,5,.3);box-shadow:inset 0 0 80px rgba(0,200,5,.05)}
+.sc1 .tagno{color:var(--green-soft)}
+.sc1 h3{background:linear-gradient(90deg,#fff,var(--green-soft));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sc1 .bigno{color:rgba(0,200,5,.1)}
+.sc2{background:linear-gradient(135deg,#151a0b,#0e120a 65%);border:1px solid rgba(255,179,71,.3);box-shadow:inset 0 0 80px rgba(255,179,71,.05)}
+.sc2 .tagno{color:var(--amber)}
+.sc2 h3{background:linear-gradient(90deg,#fff,var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sc2 .bigno{color:rgba(255,179,71,.1)}
+.sc3{background:linear-gradient(135deg,#1c1108,#140d07 65%);border:1px solid rgba(255,106,0,.35);box-shadow:inset 0 0 80px rgba(255,106,0,.06)}
+.sc3 .tagno{color:var(--fire)}
+.sc3 h3{background:linear-gradient(90deg,#fff,var(--fire));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sc3 .bigno{color:rgba(255,106,0,.12)}
 
 /* ---------- token specs ---------- */
 .token-wrap{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:center}
@@ -285,16 +295,19 @@ footer{border-top:1px solid var(--line);padding:70px 22px 40px;background:var(--
       <div class="tagno">Beat 01 / The spark</div>
       <h3>Every fire starts embarrassingly small</h3>
       <p>A flash point is a flame that dies the second you look away. Most tokens never get past it. The meme begins where a small crew decides the spark is worth protecting anyway.</p>
+      <div class="bigno" aria-hidden="true">01</div>
     </article>
     <article class="stack-card sc2">
       <div class="tagno">Beat 02 / The fire point</div>
       <h3>The moment it burns on its own</h3>
       <p>In chemistry, the fire point is the temperature where a flame keeps burning after ignition — no more help needed. For a community it's the same: the moment memes, holders and jokes start feeding each other without anyone pushing.</p>
+      <div class="bigno" aria-hidden="true">02</div>
     </article>
     <article class="stack-card sc3">
       <div class="tagno">Beat 03 / The myth arc</div>
       <h3>$2M spark → $6B myth arc</h3>
       <p>A mythic shorthand, not a forecast: the impossible-looking trajectory every crypto community secretly narrates for itself. We say it out loud, keep it positive, and let the chart do whatever charts do.</p>
+      <div class="bigno" aria-hidden="true">03</div>
     </article>
   </div>
 </section>
@@ -498,12 +511,12 @@ var PONS_URL = "https://pons.family"; // replace with exact Pons token page at l
     });
   });
 
-  // ---- card stack burial ----
+  // ---- card stack burial (subtle scale only — keep text readable) ----
   var cards=gsap.utils.toArray('.stack-card');
   cards.forEach(function(card,i){
     if(i<cards.length-1){
-      gsap.to(card,{scale:.92,filter:'brightness(.55)',ease:'none',
-        scrollTrigger:{trigger:cards[i+1],start:'top bottom',end:'top 12%',scrub:true}});
+      gsap.to(card,{scale:.96,ease:'none',
+        scrollTrigger:{trigger:cards[i+1],start:'top 75%',end:'top 14%',scrub:true}});
     }
   });
 
